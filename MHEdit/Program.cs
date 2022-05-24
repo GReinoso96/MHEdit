@@ -32,7 +32,7 @@ namespace MHEdit
                         try
                         {
                             string meleeIn = File.ReadAllText($"{args[2]}\\melee.json");
-                            string gunnerIn = File.ReadAllText($"{args[2]}\\melee.json");
+                            string gunnerIn = File.ReadAllText($"{args[2]}\\gunner.json");
                             Controllers.P2G.saveMelee(args[3], meleeIn);
                             Controllers.P2G.saveGunner(args[3], gunnerIn);
                         }
