@@ -7,31 +7,34 @@ namespace MHEdit
     {
         static void Main(string[] args)
         {
-            if(args.Length >= 3)
+            if(args.Length >= 4)
             {
-                if (args[0].Equals("-d"))
+                if (args[0].Equals("P2G"))
                 {
-                    var outString = Controllers.P2G.GetMelee(args[1]);
+                    if (args[1].Equals("-d"))
+                    {
+                        var outString = Controllers.P2G.GetMelee(args[2]);
 
-                    try
-                    {
-                        File.WriteAllText(args[2], outString);
+                        try
+                        {
+                            File.WriteAllText(args[3], outString);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
                     }
-                    catch (Exception ex)
+                    else if (args[1].Equals("-i"))
                     {
-                        Console.WriteLine(ex.ToString());
-                    }
-                }
-                else if (args[0].Equals("-i"))
-                {
-                    try
-                    {
-                        string jsonIn = File.ReadAllText(args[1]);
-                        Controllers.P2G.saveMelee(args[2], jsonIn);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
+                        try
+                        {
+                            string jsonIn = File.ReadAllText(args[2]);
+                            Controllers.P2G.saveMelee(args[3], jsonIn);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
                     }
                 }
             }
