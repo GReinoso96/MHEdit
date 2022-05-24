@@ -6,20 +6,25 @@ Generic Monster Hunter Equipment Modding Tool using .NET Core 5.0
 MHEdit is a command line tool, it exports editable JSON files that can then be reinserted into the game.
 
 ```
-MHEdit.exe [Code] [Function] [In File] [Out File]
+MHEdit.exe [Code] [Function] [In] [Out]
 ```
 
 ## Dump
 ```
-MHEdit.exe P2G -d EBOOT.BIN melee.json
+MHEdit.exe [Code] -d eboot.bin [Out Folder]
+```
+
+```
+MHEdit.exe P2G -d EBOOT.BIN p2
 ```
 
 ## Insert
 ```
-MHEdit.exe P2G -i melee.json EBOOT.BIN
+MHEdit.exe [Code] -i [Out Folder] eboot.bin
 ```
-
-Do note that this is subject to change soon.
+```
+MHEdit.exe P2G -i p2 EBOOT.BIN
+```
 
 # Supported Games
 
