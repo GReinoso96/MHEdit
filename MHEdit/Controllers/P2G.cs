@@ -11,15 +11,22 @@ namespace MHEdit.Controllers
 {
     internal static class P2G
     {
+        public static uint meleeOffset = Helpers.P2GHelpers.meleeOffset;
+        public static uint gunnerOffset = Helpers.P2GHelpers.gunnerOffset;
+        public static uint headOffset = Helpers.P2GHelpers.headOffset;
+        public static uint chestOffset = Helpers.P2GHelpers.chestOffset;
+        public static uint armOffset = Helpers.P2GHelpers.armOffset;
+        public static uint waistOffset = Helpers.P2GHelpers.waistOffset;
+        public static uint legOffset = Helpers.P2GHelpers.legOffset;
         public static string GetMelee(string fileIn)
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.meleeOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(meleeOffset, SeekOrigin.Begin);
                 Dictionary<string,Equipment.P2GMelee> meleeWeapons = new();
                 for (int i = 0; i < Helpers.P2GHelpers.meleeCount; i++)
                 {
-                    Equipment.P2GMelee weapon = new Equipment.P2GMelee(
+                    Equipment.P2GMelee weapon = new(
                         br.ReadUInt16(),
                         br.ReadByte(),
                         br.ReadByte(),
@@ -49,11 +56,11 @@ namespace MHEdit.Controllers
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.gunnerOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(gunnerOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GGunner> gunnerWeapons = new();
                 for (int i = 0; i < Helpers.P2GHelpers.gunnerCount; i++)
                 {
-                    Equipment.P2GGunner weapon = new Equipment.P2GGunner(
+                    Equipment.P2GGunner weapon = new(
                         br.ReadUInt16(),
                         br.ReadByte(),
                         br.ReadByte(),
@@ -85,7 +92,7 @@ namespace MHEdit.Controllers
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.headOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(headOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> headParts = new();
                 for (int i = 0; i < Helpers.P2GHelpers.headCount; i++)
                 {
@@ -135,7 +142,7 @@ namespace MHEdit.Controllers
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.chestOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(chestOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> chestParts = new();
                 for (int i = 0; i < Helpers.P2GHelpers.chestCount; i++)
                 {
@@ -185,7 +192,7 @@ namespace MHEdit.Controllers
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.armOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(armOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> armParts = new();
                 for (int i = 0; i < Helpers.P2GHelpers.armCount; i++)
                 {
@@ -235,7 +242,7 @@ namespace MHEdit.Controllers
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.waistOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(waistOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> waistParts = new();
                 for (int i = 0; i < Helpers.P2GHelpers.waistCount; i++)
                 {
@@ -285,7 +292,7 @@ namespace MHEdit.Controllers
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helpers.P2GHelpers.legOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(legOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> legParts = new();
                 for (int i = 0; i < Helpers.P2GHelpers.legCount; i++)
                 {
@@ -331,11 +338,11 @@ namespace MHEdit.Controllers
             }
         }
 
-        public static void saveMelee(string fileIn, string jsonIn)
+        public static void SaveMelee(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.meleeOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(meleeOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GMelee> meleeWeapons = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GMelee>>(jsonIn);
                 foreach(var item in meleeWeapons)
                 {
@@ -360,11 +367,11 @@ namespace MHEdit.Controllers
             }
         }
 
-        public static void saveGunner(string fileIn, string jsonIn)
+        public static void SaveGunner(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.gunnerOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(gunnerOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GGunner> gunnerWeapons = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GGunner>>(jsonIn);
                 foreach (var item in gunnerWeapons)
                 {
@@ -391,57 +398,57 @@ namespace MHEdit.Controllers
             }
         }
 
-        public static void saveHeads(string fileIn, string jsonIn)
+        public static void SaveHeads(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.headOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(headOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> headParts = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GArmor>>(jsonIn);
-                writeArmor(bw, headParts);
+                WriteArmor(bw, headParts);
             }
         }
 
-        public static void saveChests(string fileIn, string jsonIn)
+        public static void SaveChests(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.chestOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(chestOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> chestParts = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GArmor>>(jsonIn);
-                writeArmor(bw, chestParts);
+                WriteArmor(bw, chestParts);
             }
         }
 
-        public static void saveArms(string fileIn, string jsonIn)
+        public static void SaveArms(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.armOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(armOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> armParts = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GArmor>>(jsonIn);
-                writeArmor(bw, armParts);
+                WriteArmor(bw, armParts);
             }
         }
 
-        public static void saveWaists(string fileIn, string jsonIn)
+        public static void SaveWaists(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.waistOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(waistOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> waistParts = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GArmor>>(jsonIn);
-                writeArmor(bw, waistParts);
+                WriteArmor(bw, waistParts);
             }
         }
 
-        public static void saveLegs(string fileIn, string jsonIn)
+        public static void SaveLegs(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
             {
-                bw.BaseStream.Seek(Helpers.P2GHelpers.legOffset, SeekOrigin.Begin);
+                bw.BaseStream.Seek(legOffset, SeekOrigin.Begin);
                 Dictionary<string, Equipment.P2GArmor> legParts = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GArmor>>(jsonIn);
-                writeArmor(bw, legParts);
+                WriteArmor(bw, legParts);
             }
         }
 
-        private static void writeArmor(BinaryWriter bw, Dictionary<string, Equipment.P2GArmor> parts)
+        private static void WriteArmor(BinaryWriter bw, Dictionary<string, Equipment.P2GArmor> parts)
         {
             foreach (var item in parts)
             {

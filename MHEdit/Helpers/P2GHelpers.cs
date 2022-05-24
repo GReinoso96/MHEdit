@@ -3619,5 +3619,15 @@
 "HypnoLeggings,0x08974E58",
 "LavaGreaves,0x08974E80",
 "LavaLeggings,0x08974EA8" };
+
+        //NAFU
+        public static uint meleeOffsetNA = 0x1586B8;
+        public static uint gunnerOffsetNA = 0x15F28C;
+
+        public static uint headOffsetNA = 0x161928;
+        public static uint chestOffsetNA = 0x165D48;
+        public static uint armOffsetNA = 0x169EE8;
+        public static uint waistOffsetNA = 0x16DF20;
+        public static uint legOffsetNA = 0x171F08;
     }
 }
