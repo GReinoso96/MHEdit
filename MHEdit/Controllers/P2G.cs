@@ -44,6 +44,43 @@ namespace MHEdit.Controllers
                 return jsonString;
             }
         }
+
+        public static string GetGunner(string fileIn)
+        {
+            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            {
+                br.BaseStream.Seek(Helpers.P2GHelpers.gunnerOffset, SeekOrigin.Begin);
+                Dictionary<string, Equipment.P2GGunner> gunnerWeapons = new();
+                for (int i = 0; i < Helpers.P2GHelpers.gunnerCount; i++)
+                {
+                    Equipment.P2GGunner weapon = new Equipment.P2GGunner(
+                        br.ReadUInt16(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadUInt32(),
+                        br.ReadUInt16(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadUInt16(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadUInt32(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte());
+                    gunnerWeapons.Add(Helpers.P2GHelpers.gunnerNames[i], weapon);
+                }
+
+                string jsonString = JsonSerializer.Serialize(gunnerWeapons, new JsonSerializerOptions { WriteIndented = true });
+                return jsonString;
+            }
+        }
+
         public static void saveMelee(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
@@ -69,6 +106,37 @@ namespace MHEdit.Controllers
                     bw.Write((byte)item.Value.ExtraBit);
                     bw.Write((UInt16)item.Value.SortOrder);
                     bw.Write((byte)item.Value.Unk3);
+                }
+            }
+        }
+
+        public static void saveGunner(string fileIn, string jsonIn)
+        {
+            using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+            {
+                bw.BaseStream.Seek(Helpers.P2GHelpers.gunnerOffset, SeekOrigin.Begin);
+                Dictionary<string, Equipment.P2GGunner> gunnerWeapons = JsonSerializer.Deserialize<Dictionary<string, Equipment.P2GGunner>>(jsonIn);
+                foreach (var item in gunnerWeapons)
+                {
+                    bw.Write((UInt16)item.Value.Model);
+                    bw.Write((byte)item.Value.Rarity);
+                    bw.Write((byte)item.Value.Unk1);
+                    bw.Write((UInt32)item.Value.Price);
+                    bw.Write((UInt16)item.Value.Damage);
+                    bw.Write((sbyte)item.Value.Defense);
+                    bw.Write((byte)item.Value.Recoil);
+                    bw.Write((byte)item.Value.Slots);
+                    bw.Write((sbyte)item.Value.Affinity);
+                    bw.Write((UInt16)item.Value.SortOrder);
+                    bw.Write((byte)item.Value.AmmoConfig);
+                    bw.Write((byte)item.Value.ElementId);
+                    bw.Write((byte)item.Value.ElementValue);
+                    bw.Write((byte)item.Value.ReloadSpeed);
+                    bw.Write((UInt32)item.Value.Unk2);
+                    bw.Write((byte)item.Value.AmmoUsable1);
+                    bw.Write((byte)item.Value.AmmoUsable2);
+                    bw.Write((byte)item.Value.AmmoUsable3);
+                    bw.Write((byte)item.Value.AmmoUsable4);
                 }
             }
         }
