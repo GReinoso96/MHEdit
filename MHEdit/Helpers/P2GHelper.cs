@@ -1,24 +1,7 @@
 ﻿namespace MHEdit.Helpers
 {
-    internal static class P2GHelpers
+    internal static class P2GHelper
     {
-        public static uint meleeOffset = 0x155A94;
-        public static uint gunnerOffset = 0x15C668;
-
-        public static uint headOffset = 0x15ED04;
-        public static uint chestOffset = 0x163124;
-        public static uint armOffset = 0x1672C4;
-        public static uint waistOffset = 0x16B2FC;
-        public static uint legOffset = 0x16F2E4;
-
-        public static uint meleeCount = 1149;
-        public static uint gunnerCount = 353;
-
-        public static uint headCount = 436;
-        public static uint chestCount = 420;
-        public static uint armCount = 411;
-        public static uint legCount = 420;
-        public static uint waistCount = 409;
 
         public static string[] meleeNames = { "CarbaliteSword,0x089574E0",
 "CarbaliteSwordPlus,0x089574F8",
@@ -3619,6 +3602,25 @@
 "HypnoLeggings,0x08974E58",
 "LavaGreaves,0x08974E80",
 "LavaLeggings,0x08974EA8" };
+
+        //P2G
+        public static uint meleeOffset = 0x155A94;
+        public static uint gunnerOffset = 0x15C668;
+
+        public static uint headOffset = 0x15ED04;
+        public static uint chestOffset = 0x163124;
+        public static uint armOffset = 0x1672C4;
+        public static uint waistOffset = 0x16B2FC;
+        public static uint legOffset = 0x16F2E4;
+
+        public static uint meleeCount = 1149;
+        public static uint gunnerCount = 353;
+
+        public static uint headCount = 436;
+        public static uint chestCount = 420;
+        public static uint armCount = 411;
+        public static uint legCount = 420;
+        public static uint waistCount = 409;
 
         //NAFU
         public static uint meleeOffsetNA = 0x1586B8;
