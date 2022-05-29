@@ -3619,8 +3619,8 @@
         public static uint headCount = 436;
         public static uint chestCount = 420;
         public static uint armCount = 411;
-        public static uint legCount = 420;
         public static uint waistCount = 409;
+        public static uint legCount = 420;
 
         //NAFU
         public static uint meleeOffsetNA = 0x1586B8;

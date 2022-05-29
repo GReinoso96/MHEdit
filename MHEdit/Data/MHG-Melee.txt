@@ -1,0 +1,381 @@
+﻿Nothing equipped
+Iron Sword
+Iron Sword Plus
+Buster Sword
+Buster Sword Plus
+Buster Blade
+Ravager Blade
+Ravager Blade Plus
+Lacerator Blade
+Lacerator Blade Plus
+Iron Katana
+Iron Katana Grace
+Iron Katana Gospel
+Bone Katana Wolf
+Bone Katana Shark
+Bone Katana Dragon
+Black Katana Mk.I
+Black Katana Mk.II
+Defender
+Defender Plus
+Sentinel
+Halberd
+Halberd Plus
+Judgment
+Executioner
+Executioner Plus
+Dark Scythe
+Tormentor
+Bone Blade
+Bone Blade Plus
+Agito
+Agito Plus
+Dragon Agito
+Golem Blade
+Golem Blade Plus
+Valkyrie Blade
+Sieglinde
+Dragonslayer
+Dragon Massacre
+Finblade
+Finblade Plus
+Plesioth Watersword
+Redwing
+Rathalos Firesword
+Rusted Great Sword
+Tarnished Great Swd
+Legendary Great Swd
+Ancient Blade
+Bone
+Large Bone
+Fire Dragonsword
+Red Dragonsword
+Serpentblade
+Vile Serpentblade
+Great Serpentblade
+Iron Hammer
+Iron Hammer Plus
+War Hammer
+War Hammer Plus
+War Mace
+Iron Striker
+Iron Striker Plus
+Iron Impact
+Iron Impact Plus
+Spiked Hammer
+Spiked Hammer Plus
+Crystal Hammer
+Crystal Nova
+Anvil Hammer
+Earthshaker
+Bone Axe
+Bone Axe Plus
+Bone Broadaxe
+Gigaton Hammer
+Gigaton Hammer Plus
+Titan Hammer
+Shell Hammer
+Graviton Hammer
+Bone Hammer
+Bone Hammer Plus
+Cyclo Hammer
+Cyclo Hammer Plus
+Atlas Hammer
+Skullcrusher
+Skullcrusher Plus
+Kut Ku Chin
+Kut Ku Jaw
+Diablo Hammer
+Diablo Hammer Plus
+Diablos Maul
+Jail Hammer
+Jail Hammer Plus
+Prison Hammer
+Gunhammer Prototype
+Dead Revolver
+Rusted Hammer
+Tarnished Hammer
+Legendary Hammer
+Breath Core Hammer
+Bone Club
+Great Bone Club
+Dragon Destroyer
+Dragonbreaker
+Iron Lance
+Iron Lance Plus
+Knight Lance
+Knight Lance Plus
+Knight Spear
+Paladin Lance
+Paladin Lance Plus
+Rampart
+Babel Spear
+Iron Knights Pike
+Steel Knights Pike
+Dragon Knights Pike
+Dark Lance
+Dark Lance Plus
+Dark Spear
+Shock Lance
+Trident
+Bone Javelin
+Bone Javelin Plus
+Spiked Spear
+Aqua Spear
+Aqua Spear Plus
+Lullaby Spear
+Requiem Spear
+Bone Lance
+Bone Lance Plus
+Longhorn
+Longhorn Plus
+Long Tusk
+Barbarian Tusk
+Barbarian Tusk Plus
+Barbaroi Tusk
+Ogre Tusk
+Red Tail
+Red Tail Plus
+Hellfire
+Diablo Horn
+Diablo Horn Plus
+Diablo Spear
+Crimson Lance
+Crimson War Pike
+Venom Lance
+Venom Lance Plus
+Venom Spear
+Gravios Spear
+Gunlance Prototype
+Gatling Lance
+Rusted Lance
+Tarnished Lance
+Legendary Lance
+Undertaker
+Dragonlance
+Dragoon Lord
+Hunters Knife
+Hunters Knife Plus
+Hunters Dagger
+Hunters Dagger Plus
+Assassins Dagger
+Kirin Bolt
+Kirin Bolt Plus
+Kirin Bolt Mega
+Kirin Bolt Ultimus
+Serpent Bite
+Serpent Bite Plus
+Viper Bite
+Viper Bite Plus
+Deathprize
+Hydra Bite
+Hydra Bite Plus
+Deadly Poison
+Thunderbane
+Thunderbane Plus
+Frightbane
+Poison Axe
+Poison Battleaxe
+Bone Kris
+Bone Kris Plus
+Bonepick
+Bonepick Plus
+Bonespike
+Red Saber
+Red Saber Plus
+Flame Falchion
+Blazing Falchion
+Weary Finsword
+Weary Finsword Plus
+Sandman Finsword
+Heros Blade
+Masters Blade
+Studded Club
+Studded Club Plus
+Spiked Bat
+Crimson Club
+Monoblos Club
+Rusted Sword
+Tarnished Sword
+Legendary Sword
+Eternal Strife
+Kitchen Knife
+Iron Chefblade
+Dragonbuster
+Dragonblood
+Catspaw
+Catburglar
+Tactical Blade
+Eager Cleaver
+Divine Slasher
+Chrome Razor
+Eternal Annihilator
+Finishing Hammer
+Onslaught Hammer
+Binder Mace
+Iron Devil
+Grayburg Javelin
+Nightmare
+Spear of Prominence
+Black Dragon Spear
+Thundertip
+Corona
+Black Dragon Sword
+Odyssey
+Teddybear
+Valhalla
+Ninja Sword
+Enormous Ham
+Siegmund
+Frozen Tuna
+Cactus Creamer
+Vacuum Striker
+Native Spear
+Polytan
+Twin Dagger
+Twin Dagger Plus
+Hurricane
+Hurricane Plus
+Cyclone
+Dual Tomahawk
+Dual Tomahawk Plus
+Guild Rapier
+Guild Rapier Plus
+Guild Saber
+Prototype Saw Slicer
+Guillotine
+Bone Scythe
+Bone Scythe Plus
+Cutlass
+Cutlass Plus
+Dual Diablo
+Dual Diablo Plus
+Insector
+Insector Plus
+Gradios
+Gradios Plus
+Gradios Ultimus
+Double Dragon
+Dual Dragon Ultimus
+G Blade GMR Chrome Heart
+Barbaroi Blade
+Rathalos Glinsword
+Torment Purgatory
+White Disaster
+Velocidrome Bite
+Gabas
+Origin Sword G
+Origin Sword G Plus
+Dragon Agito G
+Dragon Agito G Plus
+True Dragons Jaw
+Iron Sword G
+Iron Sword G Plus
+Rathalos Flamesword
+Azure Fangblade
+Golden Serpentblade
+Plesioth Crystasword
+Scythe of Menace
+Enforcers Axe
+Inferno Dragonsword
+Smolder Dragonsword
+Blushing Dame
+Pale Kaiser
+Sieglinde G
+Golem G
+Devil Slicer
+Chrome Quietus
+Eternal Eradicator
+Black Belt Blade
+Expert Blade
+Worn Greatsword
+Weathered Greatsword
+Antique Greatsword
+Epitaph Blade
+Origin Hammer G
+Origin Hammer G Plus
+Atlas Hammer G
+Atlas Hammer G Plus
+Devil Masher
+Sanctioned Gunhammer
+War Stamp
+War Basher
+Dark Punisher
+Dragon Demolisher
+Kut Ku Pick
+Kut Ku Pick Plus
+Great Nova
+Great Titan
+Black Belt Hammer
+Expert Hammer
+Worn Hammer
+Weathered Hammer
+Antique Hammer
+Pulsating Core
+Origin Lance G
+Origin Lance G Plus
+Longhorn G
+Longhorn G Plus
+Dark
+Sanctioned Gunlance
+Dragon Rider Spear
+True Fatalis Lance
+Ruiner Lance
+Black Tempest
+Blaze Tail
+Red Prominence
+Blue Tail
+Blue Prominence
+Gravios Venom Spear
+Black Gravios Spear
+Black Belt Lance
+Expert Lance
+Worn Lance
+Weathered Lance
+Antique Lance
+Skyscraper
+Origin Knife G
+Origin Knife G Plus
+Superior Dagger
+Superior Dagger Plus
+Odyssey Blade
+Deadly Battleaxe
+Thor Indora
+True Fatalis Sword
+Ruiner Sword
+Cursed Spirit
+Djinn
+Djinn Plus
+High Ifrit
+Golden Falchion
+Plesioth Finspike
+Plesioth Direspike
+Melynx Tool
+Black Belt Sword
+Expert Sword
+Great Ninja Sword
+Kirin Bolt Maximus
+Ultimus Heaven&Earth
+Sanctioned Blades
+Guild Knight Sabers
+Insectiscythes
+Wyvern Strife
+Worn Blades
+Weathered Blades
+Antique Blades
+Enduring Schism
+Auberon
+Titania
+Ceramic Blos Lance
+Venom Monster
+Legendary Twins
+Dummy1
+Upper Battleaxe
+Kaiser Blade
+Polytan G
+Dummy2
+Dummy3
+Dummy4
+Dummy5
+Kirin Bolts
+Gluttons Tools

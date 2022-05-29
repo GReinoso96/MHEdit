@@ -1,0 +1,68 @@
+﻿Nothing Equipped
+Green Pants
+Blue Pants
+Hunters Greaves
+Hunters Leggings
+Velociprey Greaves
+Velociprey Leggings
+Genprey Greaves
+Genprey Leggings
+Ioprey Greaves
+Ioprey Leggings
+Rathian Greaves
+Rathian Leggings
+Cephalos Greaves
+Cephalos Leggings
+Battle Greaves
+Battle Leggings
+Bone Greaves
+Bone Leggings
+Gypceros Greaves
+Gypceros Leggings
+Rathalos Greaves
+Rathalos Leggings
+Gravios Greaves Plus
+Gravios Leggings Plus
+Hi Metal Greaves Plus
+Hi Metal Leggings Plus
+Auroros Pants
+Genesis Pants
+Borealis Pants
+Glyph Pants
+Vespoid Greaves Plus
+Vespoid Leggings Plus
+Khezu Greaves Plus
+Khezu Leggings Plus
+Plesioth Greaves Plus
+Plesioth Leggings Plus
+Hornet Greaves Plus
+Hornet Leggings Plus
+Dragonfeet
+Dragonlegs
+Guild Knight Boots
+Guild Knight Tights
+Maidens Stockings
+Personal Tights
+Silver Boots
+Dark Metal Boots
+Pink Metal Boots
+Shinobi Boots Sun
+Shinobi Boots Moon
+Red Borealis Pants
+Red Glyph Pants
+Hi Metal Greaves
+Hi Metal Leggings
+Khezu Greaves
+Khezu Leggings
+Plesioth Greaves
+Plesioth Leggings
+Vespoid Greaves
+Vespoid Leggings
+Hornet Greaves
+Hornet Leggings
+Gravios Greaves
+Gravios Leggings
+Rathian Greaves Plus
+Rathian Leggings Plus
+Rathalos Greaves Plus
+Rathalos Leggings Plus

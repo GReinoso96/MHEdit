@@ -11,13 +11,21 @@ namespace MHEdit.Controllers
 {
     internal static class P2G
     {
-        public static uint meleeOffset = Helpers.P2GHelper.meleeOffset;
-        public static uint gunnerOffset = Helpers.P2GHelper.gunnerOffset;
-        public static uint headOffset = Helpers.P2GHelper.headOffset;
-        public static uint chestOffset = Helpers.P2GHelper.chestOffset;
-        public static uint armOffset = Helpers.P2GHelper.armOffset;
-        public static uint waistOffset = Helpers.P2GHelper.waistOffset;
-        public static uint legOffset = Helpers.P2GHelper.legOffset;
+        private static uint meleeOffset = Helpers.P2GHelper.meleeOffset;
+        private static uint gunnerOffset = Helpers.P2GHelper.gunnerOffset;
+        private static uint headOffset = Helpers.P2GHelper.headOffset;
+        private static uint chestOffset = Helpers.P2GHelper.chestOffset;
+        private static uint armOffset = Helpers.P2GHelper.armOffset;
+        private static uint waistOffset = Helpers.P2GHelper.waistOffset;
+        private static uint legOffset = Helpers.P2GHelper.legOffset;
+
+        private static uint meleeCount = Helpers.P2GHelper.meleeCount;
+        private static uint gunnerCount = Helpers.P2GHelper.gunnerCount;
+        private static uint headCount = Helpers.P2GHelper.headCount;
+        private static uint chestCount = Helpers.P2GHelper.chestCount;
+        private static uint armCount = Helpers.P2GHelper.armCount;
+        private static uint waistCount = Helpers.P2GHelper.waistCount;
+        private static uint legCount = Helpers.P2GHelper.legCount;
 
         public static void SetGame(string code)
         {
