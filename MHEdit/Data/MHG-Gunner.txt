@@ -1,4 +1,5 @@
-﻿Crossbow Gun
+﻿Nothing Equipped
+Crossbow Gun
 Crossbow Gun Plus
 Hornet Gun
 Valkyrie Fire

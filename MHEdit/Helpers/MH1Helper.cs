@@ -1,7 +1,27 @@
-﻿namespace MHEdit.Helpers
+﻿using System;
+using System.IO;
+
+namespace MHEdit.Helpers
 {
     internal static class MH1Helper
     {
+        static MH1Helper()
+        {
+            try
+            {
+                meleeNames = File.ReadAllLines("Data\\MHG-Melee.txt");
+                gunnerNames = File.ReadAllLines("Data\\MHG-Gunner.txt");
+                headNames = File.ReadAllLines("Data\\MH1-Helms.txt");
+                chestNames = File.ReadAllLines("Data\\MH1-Chests.txt");
+                armNames = File.ReadAllLines("Data\\MH1-Arms.txt");
+                waistNames = File.ReadAllLines("Data\\MH1-Waists.txt");
+                legNames = File.ReadAllLines("Data\\MH1-Legs.txt");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
 
         public static string[] meleeNames;
         public static string[] gunnerNames;

@@ -9,19 +9,6 @@ namespace MHEdit
         {
             if (args.Length >= 4)
             {
-                try
-                {
-                    Helpers.MH1Helper.meleeNames = File.ReadAllLines("Data\\MHG-Melee.txt");
-                    Helpers.MH1Helper.gunnerNames = File.ReadAllLines("Data\\MHG-Gunner.txt");
-                    Helpers.MH1Helper.headNames = File.ReadAllLines("Data\\MH1-Helms.txt");
-                    Helpers.MH1Helper.chestNames = File.ReadAllLines("Data\\MH1-Chests.txt");
-                    Helpers.MH1Helper.armNames = File.ReadAllLines("Data\\MH1-Arms.txt");
-                    Helpers.MH1Helper.waistNames = File.ReadAllLines("Data\\MH1-Waists.txt");
-                    Helpers.MH1Helper.legNames = File.ReadAllLines("Data\\MH1-Legs.txt");
-                } catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
                 if (args[0].Equals("P2G") || args[0].Equals("NAFU") || args[0].Equals("EUFU"))
                 {
                     Controllers.P2G.SetGame(args[0]);

@@ -8,7 +8,7 @@ namespace MHEdit.Equipment
 {
     internal class MH1Armor
     {
-        public MH1Armor(byte modelMale, byte modelFemale, byte type, byte rarity, uint price, byte defense, sbyte resFire, sbyte resWater, sbyte resThunder, sbyte resDragon, byte unk1, ushort sortOrder, uint nameOffset)
+        public MH1Armor(byte modelMale, byte modelFemale, byte type, byte rarity, uint price, byte defense, sbyte resFire, sbyte resWater, sbyte resThunder, sbyte resDragon, byte unk1, ushort unk2, uint nameOffset)
         {
             ModelMale = modelMale;
             ModelFemale = modelFemale;
@@ -21,7 +21,7 @@ namespace MHEdit.Equipment
             ResThunder = resThunder;
             ResDragon = resDragon;
             Unk1 = unk1;
-            Unk2 = sortOrder;
+            Unk2 = unk2;
             NameOffset = nameOffset;
         }
 
