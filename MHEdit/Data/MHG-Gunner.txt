@@ -1,5 +1,4 @@
-﻿Nothing Equipped
-Crossbow Gun
+﻿Crossbow Gun
 Crossbow Gun Plus
 Hornet Gun
 Valkyrie Fire
@@ -26,7 +25,7 @@ Demonlock
 Dark Parasol
 Gravios Roar
 Mega Kut Ku Cannon
-Great Cross Bowgun
+Great Crossbow Gun
 Valkyrie Flame
 Valkyrie Blaze
 Valkyrie Heart
@@ -35,27 +34,27 @@ Spartacus Flame
 Spartacus Blaze
 Spartacus Soul
 Silver Spartacus
-Crimson Green
+Crimson Blue
 Azure Sakura
-Grand Azure Sakura
+Empire Azure Sakura
 Supreme Azure Sakura
-Blossomayhem
-Bullet Rain Azure
+Profusion
+Aqua Blade Shower
 Green Blade Shower
 Crimson Blade Shower
-Bullet Storm White
+Bullet Storm
 Maelstrom Plus
-Desert Storm Plus
+Sandstorm Plus
 Desert Tempest
 Sandfall
 Grenade Launcher Plus
 Titan Launcher Plus
-Chronos Launcher
+Chronos Grenade
 Kut Ku Anger
 Kut Ku Rage
 Black Belt Bowgun
 Expert Bowgun
-Gods Isle
+Island of the Gods
 Dead Parasol
 Angel Parasol
 Sakura Parasol
@@ -70,9 +69,9 @@ Monodevilcaster Plus
 Meteor Buster
 Vor Cannon Plus
 Destinys Hand
-Yian Kut Ku Cannon Plus
-SupremeL.Shan Cannon
-EmperorL.Shan Cannon
+Kut Ku Cannon Plus
+Supreme Lao Shan Can
+Empr Lao Shan Cannon
 Honeycomber
 Gravios Howl
 Spring Blossomayhem

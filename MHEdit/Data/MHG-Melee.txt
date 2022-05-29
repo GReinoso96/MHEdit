@@ -1,5 +1,4 @@
-﻿Nothing equipped
-Iron Sword
+﻿Iron Sword
 Iron Sword Plus
 Buster Sword
 Buster Sword Plus
@@ -138,13 +137,13 @@ Red Tail
 Red Tail Plus
 Hellfire
 Diablo Horn
-Diablo Horn Plus
+Diablos Lance Plus
 Diablo Spear
 Crimson Lance
 Crimson War Pike
 Venom Lance
 Venom Lance Plus
-Venom Spear
+Basarios Venom Spear
 Gravios Spear
 Gunlance Prototype
 Gatling Lance
@@ -257,9 +256,9 @@ Gradios Plus
 Gradios Ultimus
 Double Dragon
 Dual Dragon Ultimus
-G Blade GMR Chrome Heart
+The Chrome Heart
 Barbaroi Blade
-Rathalos Glinsword
+Shiny Rathalos Sword
 Torment Purgatory
 White Disaster
 Velocidrome Bite
@@ -271,8 +270,8 @@ Dragon Agito G Plus
 True Dragons Jaw
 Iron Sword G
 Iron Sword G Plus
-Rathalos Flamesword
-Azure Fangblade
+Rathalos Firesword Plus
+Greater Serpentblade
 Golden Serpentblade
 Plesioth Crystasword
 Scythe of Menace
@@ -280,25 +279,25 @@ Enforcers Axe
 Inferno Dragonsword
 Smolder Dragonsword
 Blushing Dame
-Pale Kaiser
-Sieglinde G
-Golem G
+Pael Keizah
+Seiglinde Plus
+Great Golem Plus
 Devil Slicer
-Chrome Quietus
+Chrome Death Razor
 Eternal Eradicator
 Black Belt Blade
 Expert Blade
-Worn Greatsword
-Weathered Greatsword
-Antique Greatsword
+Worn Great Sword
+Weathered Grt Sword
+Antique Great Sword
 Epitaph Blade
 Origin Hammer G
 Origin Hammer G Plus
 Atlas Hammer G
 Atlas Hammer G Plus
 Devil Masher
-Sanctioned Gunhammer
-War Stamp
+Sanctioned GunHammer
+War Stamper
 War Basher
 Dark Punisher
 Dragon Demolisher
@@ -319,8 +318,8 @@ Longhorn G Plus
 Dark
 Sanctioned Gunlance
 Dragon Rider Spear
-True Fatalis Lance
-Ruiner Lance
+True BlackDragon Spr
+Black Ruiner Lance
 Black Tempest
 Blaze Tail
 Red Prominence
@@ -330,52 +329,52 @@ Gravios Venom Spear
 Black Gravios Spear
 Black Belt Lance
 Expert Lance
-Worn Lance
-Weathered Lance
+Worn Spear
+Weathered Spear
 Antique Lance
-Skyscraper
+Matenro
 Origin Knife G
 Origin Knife G Plus
 Superior Dagger
 Superior Dagger Plus
 Odyssey Blade
 Deadly Battleaxe
-Thor Indora
-True Fatalis Sword
-Ruiner Sword
+Kirin Bolt Indora
+True BlackDragon Swd
+Black Ruiner Sword
 Cursed Spirit
 Djinn
 Djinn Plus
 High Ifrit
 Golden Falchion
-Plesioth Finspike
-Plesioth Direspike
+Sandman Spike
+High Sandman Spike
 Melynx Tool
 Black Belt Sword
 Expert Sword
 Great Ninja Sword
-Kirin Bolt Maximus
-Ultimus Heaven&Earth
+Kirin Bolt Kami
+Ultimus Heaven and Earth
 Sanctioned Blades
 Guild Knight Sabers
-Insectiscythes
-Wyvern Strife
+Insect Slicer
+Corpse Blades
 Worn Blades
 Weathered Blades
 Antique Blades
-Enduring Schism
-Auberon
-Titania
+Eternal Schism
+Obelion
+Titernia
 Ceramic Blos Lance
 Venom Monster
-Legendary Twins
-Dummy1
+Legendary Blades
+Serial Edge
 Upper Battleaxe
-Kaiser Blade
-Polytan G
-Dummy2
-Dummy3
-Dummy4
-Dummy5
+Geyser Sword
+Polytan Plus
+Doom
+Watercutter
+Coma Rod
+Howling G
 Kirin Bolts
-Gluttons Tools
+Gluttons Set
