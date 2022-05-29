@@ -31,10 +31,11 @@ MHEdit.exe P2G -i p2 EBOOT.BIN
 | Game | Code | Blademaster Weapons | Gunner Weapons | Armors |
 | --- | --- | --- | --- | --- |
 | P2G/FU | P2G, NAFU, EUFU | Yes | Yes | Yes |
+| MH1J | MH1J | Yes | Yes | Yes |
+| MH1 | MH1USA, MH1EUR | TBD | TBD | TBD |
 | P2/F2 | P2, NAF2, EUF2 | TBD | TBD | TBD |
 | P1/F1 | P1, NAF1, EUF1 | TBD | TBD | TBD |
 | MHG | PS2G, WIIG | TBD | TBD | TBD |
-| MH1 | NA1, EU1, JP1 | TBD | TBD | TBD |
 | MH2 | DOS | TBD | TBD | TBD |
 | MH3 | NATRI, EUTRI, JPTRI | TBD | TBD | TBD |
 
@@ -49,6 +50,17 @@ MHEdit.exe P2G -i p2 EBOOT.BIN
 | Gather Editing | Mid |
 
 # FAQ
+
+## Which file do I have to use?
+* PSP games: EBOOT.BIN (Decrypted).
+* MH1 (Japanese): SLPM_654.95.
+
+Not yet supported:
+
+* MH1 (USA): sub_main.bin (Decrypted).
+* MH1 (EUR): [language].bin (Decrypted).
+* MHG (PS2): sub_main.bin (Decrypted).
+* MHG (Wii): main.dol (Decrypted).
 
 ## I got an error, what do?
 Make sure you're using a decrypted eboot (PSP games), you can dump decrypted eboots with PPSSPP.
