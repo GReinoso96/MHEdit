@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace MHEdit.Controllers
 {
     internal static class MH1
     {
+        private static uint skillsOffset = Helpers.MH1Helper.skillsOffsetJP;
         private static uint meleeOffset = Helpers.MH1Helper.meleeOffset;
         private static uint gunnerOffset = Helpers.MH1Helper.gunnerOffset;
         private static uint headOffset = Helpers.MH1Helper.headOffset;
@@ -19,6 +22,7 @@ namespace MHEdit.Controllers
         private static uint waistOffset = Helpers.MH1Helper.waistOffset;
         private static uint legOffset = Helpers.MH1Helper.legOffset;
 
+        private static uint skillsCount = Helpers.MH1Helper.skillsCountJP;
         private static uint meleeCount = Helpers.MH1Helper.meleeCountJP;
         private static uint gunnerCount = Helpers.MH1Helper.gunnerCountJP;
         private static uint headCount = Helpers.MH1Helper.headCountJP;
@@ -27,11 +31,17 @@ namespace MHEdit.Controllers
         private static uint waistCount = Helpers.MH1Helper.waistCountJP;
         private static uint legCount = Helpers.MH1Helper.legCountJP;
 
-        public static void SetGame(string code)
+        private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+            WriteIndented = true
+        };
+
+    public static void SetGame(string code)
         {
             switch (code)
             {
-                case "MH1USA":
+                case "1USA":
                     meleeOffset = Helpers.MH1Helper.meleeOffsetNA;
                     gunnerOffset = Helpers.MH1Helper.gunnerOffsetNA;
                     headOffset = Helpers.MH1Helper.headOffsetNA;
@@ -39,8 +49,17 @@ namespace MHEdit.Controllers
                     armOffset = Helpers.MH1Helper.armOffsetNA;
                     waistOffset = Helpers.MH1Helper.waistOffsetNA;
                     legOffset = Helpers.MH1Helper.legOffsetNA;
+                    skillsOffset = Helpers.MH1Helper.skillsOffsetNA;
+                    skillsCount = Helpers.MH1Helper.skillsCountNA;
+                    meleeCount = Helpers.MH1Helper.meleeCountNA;
+                    gunnerCount = Helpers.MH1Helper.gunnerCountNA;
+                    headCount = Helpers.MH1Helper.headCountNA;
+                    chestCount = Helpers.MH1Helper.chestCountNA;
+                    armCount = Helpers.MH1Helper.armCountNA;
+                    waistCount = Helpers.MH1Helper.waistCountNA;
+                    legCount = Helpers.MH1Helper.legCountNA;
                     break;
-                case "MH1EUR":
+                case "1EUR":
                     meleeOffset = Helpers.MH1Helper.meleeOffsetEU;
                     gunnerOffset = Helpers.MH1Helper.gunnerOffsetEU;
                     headOffset = Helpers.MH1Helper.headOffsetEU;
@@ -64,6 +83,8 @@ namespace MHEdit.Controllers
             var arm = GetArms(inFile);
             var waist = GetWaists(inFile);
             var leg = GetLegs(inFile);
+            var skills = GetSkills(inFile);
+            var skillsText = GetSkillsText(inFile);
 
             try
             {
@@ -75,6 +96,8 @@ namespace MHEdit.Controllers
                 File.WriteAllText($"{outFolder}\\Armguards.json", arm);
                 File.WriteAllText($"{outFolder}\\Waistpieces.json", waist);
                 File.WriteAllText($"{outFolder}\\Leggings.json", leg);
+                File.WriteAllText($"{outFolder}\\ArmorSkills.json", skills);
+                File.WriteAllText($"{outFolder}\\ArmorSkillsText.json", skillsText);
             }
             catch (Exception ex)
             {
@@ -107,6 +130,87 @@ namespace MHEdit.Controllers
             }
         }
 
+        public static string GetSkills(string fileIn)
+        {
+            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            {
+                br.BaseStream.Seek(skillsOffset, SeekOrigin.Begin);
+                Dictionary<int, Equipment.MH1Skills> armorSkills = new();
+                for (int i = 0; i < skillsCount; i++)
+                {
+                    Equipment.MH1Skills skill = new(
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte());
+                    armorSkills.Add(i, skill);
+                }
+
+                string jsonString = JsonSerializer.Serialize(armorSkills, JsonOptions);
+                return jsonString;
+            }
+        }
+
+        public static string GetSkillsText(string fileIn)
+        {
+            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            {
+                br.BaseStream.Seek(skillsOffset, SeekOrigin.Begin);
+                Dictionary<int, Equipment.MH1SkillsText> armorSkills = new();
+                for (int i = 0; i < skillsCount; i++)
+                {
+                    Equipment.MH1Skills skill = new(
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte(),
+                        br.ReadByte());
+                    string legName = "Any";
+                    string headName = "Any";
+                    string chestName = "Any";
+                    string armName = "Any";
+                    string waistName = "Any";
+                    if (skill.LegArmor != -1) { legName = Helpers.MH1Helper.legNames[skill.LegArmor]; }
+                    if (skill.HeadArmor != -1) { headName = Helpers.MH1Helper.headNames[skill.HeadArmor]; }
+                    if (skill.ChestArmor != -1) { chestName = Helpers.MH1Helper.chestNames[skill.ChestArmor]; }
+                    if (skill.ArmArmor != -1) { armName = Helpers.MH1Helper.armNames[skill.ArmArmor]; }
+                    if (skill.WaistArmor != -1) { waistName = Helpers.MH1Helper.waistNames[skill.WaistArmor]; }
+                    Equipment.MH1SkillsText skillText = new(
+                        skill.Unk1,
+                        legName,
+                        headName,
+                        chestName,
+                        armName,
+                        waistName,
+                        Helpers.MH1Helper.skillNames[skill.Skill1],
+                        Helpers.MH1Helper.skillNames[skill.Skill2],
+                        Helpers.MH1Helper.skillNames[skill.Skill3],
+                        Helpers.MH1Helper.skillNames[skill.Skill4],
+                        Helpers.MH1Helper.skillNames[skill.Skill5],
+                        skill.Unk2);
+                    armorSkills.Add(i, skillText);
+                }
+
+                string jsonString = JsonSerializer.Serialize(armorSkills, JsonOptions);
+                return jsonString;
+            }
+        }
+
         public static string GetMelee(string fileIn)
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
@@ -134,7 +238,7 @@ namespace MHEdit.Controllers
                     meleeWeapons.Add(Helpers.MH1Helper.meleeNames[i],weapon);
                 }
 
-                string jsonString = JsonSerializer.Serialize(meleeWeapons, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(meleeWeapons, JsonOptions);
                 return jsonString;
             }
         }
@@ -163,7 +267,7 @@ namespace MHEdit.Controllers
                     gunnerWeapons.Add(Helpers.MH1Helper.gunnerNames[i], weapon);
                 }
 
-                string jsonString = JsonSerializer.Serialize(gunnerWeapons, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(gunnerWeapons, JsonOptions);
                 return jsonString;
             }
         }
@@ -193,7 +297,7 @@ namespace MHEdit.Controllers
                     headParts.Add(Helpers.MH1Helper.headNames[i], armor);
                 }
 
-                string jsonString = JsonSerializer.Serialize(headParts, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(headParts, JsonOptions);
                 return jsonString;
             }
         }
@@ -223,7 +327,7 @@ namespace MHEdit.Controllers
                     chestParts.Add(Helpers.MH1Helper.chestNames[i], armor);
                 }
 
-                string jsonString = JsonSerializer.Serialize(chestParts, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(chestParts, JsonOptions);
                 return jsonString;
             }
         }
@@ -253,7 +357,7 @@ namespace MHEdit.Controllers
                     armParts.Add(Helpers.MH1Helper.armNames[i], armor);
                 }
 
-                string jsonString = JsonSerializer.Serialize(armParts, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(armParts, JsonOptions);
                 return jsonString;
             }
         }
@@ -283,7 +387,7 @@ namespace MHEdit.Controllers
                     waistParts.Add(Helpers.MH1Helper.waistNames[i], armor);
                 }
 
-                string jsonString = JsonSerializer.Serialize(waistParts, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(waistParts, JsonOptions);
                 return jsonString;
             }
         }
@@ -313,7 +417,7 @@ namespace MHEdit.Controllers
                     legParts.Add(Helpers.MH1Helper.legNames[i], armor);
                 }
 
-                string jsonString = JsonSerializer.Serialize(legParts, new JsonSerializerOptions { WriteIndented = true });
+                string jsonString = JsonSerializer.Serialize(legParts, JsonOptions);
                 return jsonString;
             }
         }

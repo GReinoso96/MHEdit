@@ -1,44 +1,44 @@
 ﻿Nothing Equipped
 Iron Sword
-Iron Sword Plus
+Iron Sword+
 Buster Sword
-Buster Sword Plus
+Buster Sword+
 Buster Blade
 Ravager Blade
-Ravager Blade Plus
+Ravager Blade+
 Lacerator Blade
-Lacerator Blade Plus
+Lacerator Blade+
 Iron Katana
-Iron Katana Grace
-Iron Katana Gospel
-Bone Katana Wolf
-Bone Katana Shark
-Bone Katana Dragon
+Iron Katana "Grace"
+Iron Katana "Gospel"
+Bone Katana "Wolf"
+Bone Katana "Shark"
+Bone Katana "Dragon"
 Black Katana Mk.I
 Black Katana Mk.II
 Defender
-Defender Plus
+Defender+
 Sentinel
 Halberd
-Halberd Plus
+Halberd+
 Judgment
 Executioner
-Executioner Plus
+Executioner+
 Dark Scythe
 Tormentor
 Bone Blade
-Bone Blade Plus
+Bone Blade+
 Agito
-Agito Plus
+Agito+
 Dragon Agito
 Golem Blade
-Golem Blade Plus
+Golem Blade+
 Valkyrie Blade
 Sieglinde
 Dragonslayer
 Dragon Massacre
 Finblade
-Finblade Plus
+Finblade+
 Plesioth Watersword
 Redwing
 Rathalos Firesword
@@ -54,42 +54,42 @@ Serpentblade
 Vile Serpentblade
 Great Serpentblade
 Iron Hammer
-Iron Hammer Plus
+Iron Hammer+
 War Hammer
-War Hammer Plus
+War Hammer+
 War Mace
 Iron Striker
-Iron Striker Plus
+Iron Striker+
 Iron Impact
-Iron Impact Plus
+Iron Impact+
 Spiked Hammer
-Spiked Hammer Plus
+Spiked Hammer+
 Crystal Hammer
 Crystal Nova
 Anvil Hammer
 Earthshaker
 Bone Axe
-Bone Axe Plus
+Bone Axe+
 Bone Broadaxe
 Gigaton Hammer
-Gigaton Hammer Plus
+Gigaton Hammer+
 Titan Hammer
 Shell Hammer
 Graviton Hammer
 Bone Hammer
-Bone Hammer Plus
-Cyclo Hammer
-Cyclo Hammer Plus
+Bone Hammer+
+Cyclo-Hammer
+Cyclo-Hammer+
 Atlas Hammer
 Skullcrusher
-Skullcrusher Plus
-Kut Ku Chin
-Kut Ku Jaw
+Skullcrusher+
+Kut-Ku Chin
+Kut-Ku Jaw
 Diablo Hammer
-Diablo Hammer Plus
+Diablo Hammer+
 Diablos Maul
 Jail Hammer
-Jail Hammer Plus
+Jail Hammer+
 Prison Hammer
 Gunhammer Prototype
 Dead Revolver
@@ -102,48 +102,48 @@ Great Bone Club
 Dragon Destroyer
 Dragonbreaker
 Iron Lance
-Iron Lance Plus
+Iron Lance+
 Knight Lance
-Knight Lance Plus
+Knight Lance+
 Knight Spear
 Paladin Lance
-Paladin Lance Plus
+Paladin Lance+
 Rampart
 Babel Spear
-Iron Knights Pike
-Steel Knights Pike
-Dragon Knights Pike
+Iron Knight's Pike
+Steel Knight's Pike
+Dragon Knight's Pike
 Dark Lance
-Dark Lance Plus
+Dark Lance+
 Dark Spear
 Shock Lance
 Trident
 Bone Javelin
-Bone Javelin Plus
+Bone Javelin+
 Spiked Spear
 Aqua Spear
-Aqua Spear Plus
+Aqua Spear+
 Lullaby Spear
 Requiem Spear
 Bone Lance
-Bone Lance Plus
+Bone Lance+
 Longhorn
-Longhorn Plus
+Longhorn+
 Long Tusk
 Barbarian Tusk
-Barbarian Tusk Plus
+Barbarian Tusk+
 Barbaroi Tusk
 Ogre Tusk
 Red Tail
-Red Tail Plus
+Red Tail+
 Hellfire
 Diablo Horn
-Diablos Lance Plus
+Diablos Lance+
 Diablo Spear
 Crimson Lance
 Crimson War Pike
 Venom Lance
-Venom Lance Plus
+Venom Lance+
 Basarios Venom Spear
 Gravios Spear
 Gunlance Prototype
@@ -154,44 +154,44 @@ Legendary Lance
 Undertaker
 Dragonlance
 Dragoon Lord
-Hunters Knife
-Hunters Knife Plus
-Hunters Dagger
-Hunters Dagger Plus
-Assassins Dagger
+Hunter's Knife
+Hunter's Knife+
+Hunter's Dagger
+Hunter's Dagger+
+Assassin's Dagger
 Kirin Bolt
-Kirin Bolt Plus
+Kirin Bolt+
 Kirin Bolt Mega
 Kirin Bolt Ultimus
 Serpent Bite
-Serpent Bite Plus
+Serpent Bite+
 Viper Bite
-Viper Bite Plus
+Viper Bite+
 Deathprize
 Hydra Bite
-Hydra Bite Plus
+Hydra Bite+
 Deadly Poison
 Thunderbane
-Thunderbane Plus
+Thunderbane+
 Frightbane
 Poison Axe
 Poison Battleaxe
 Bone Kris
-Bone Kris Plus
+Bone Kris+
 Bonepick
-Bonepick Plus
+Bonepick+
 Bonespike
 Red Saber
-Red Saber Plus
+Red Saber+
 Flame Falchion
 Blazing Falchion
 Weary Finsword
-Weary Finsword Plus
+Weary Finsword+
 Sandman Finsword
-Heros Blade
-Masters Blade
+Hero's Blade
+Master's Blade
 Studded Club
-Studded Club Plus
+Studded Club+
 Spiked Bat
 Crimson Club
 Monoblos Club
@@ -233,56 +233,56 @@ Vacuum Striker
 Native Spear
 Polytan
 Twin Dagger
-Twin Dagger Plus
+Twin Dagger+
 Hurricane
-Hurricane Plus
+Hurricane+
 Cyclone
 Dual Tomahawk
-Dual Tomahawk Plus
+Dual Tomahawk+
 Guild Rapier
-Guild Rapier Plus
+Guild Rapier+
 Guild Saber
-Prototype Saw Slicer
+Prototype Saw-Slicer
 Guillotine
 Bone Scythe
-Bone Scythe Plus
+Bone Scythe+
 Cutlass
-Cutlass Plus
+Cutlass+
 Dual Diablo
-Dual Diablo Plus
+Dual Diablo+
 Insector
-Insector Plus
+Insector+
 Gradios
-Gradios Plus
+Gradios+
 Gradios Ultimus
 Double Dragon
 Dual Dragon Ultimus
 The Chrome Heart
 Barbaroi Blade
 Shiny Rathalos Sword
-Torment Purgatory
+Torment (Purgatory)
 White Disaster
 Velocidrome Bite
 Gabas
 Origin Sword G
-Origin Sword G Plus
+Origin Sword G+
 Dragon Agito G
-Dragon Agito G Plus
-True Dragons Jaw
+Dragon Agito G+
+True Dragon's Jaw
 Iron Sword G
-Iron Sword G Plus
-Rathalos Firesword Plus
+Iron Sword G+
+Rathalos Firesword+
 Greater Serpentblade
 Golden Serpentblade
 Plesioth Crystasword
 Scythe of Menace
-Enforcers Axe
+Enforcer's Axe
 Inferno Dragonsword
 Smolder Dragonsword
 Blushing Dame
 Pael Keizah
-Seiglinde Plus
-Great Golem Plus
+Seiglinde+
+Great Golem+
 Devil Slicer
 Chrome Death Razor
 Eternal Eradicator
@@ -293,17 +293,17 @@ Weathered Grt Sword
 Antique Great Sword
 Epitaph Blade
 Origin Hammer G
-Origin Hammer G Plus
+Origin Hammer G+
 Atlas Hammer G
-Atlas Hammer G Plus
+Atlas Hammer G+
 Devil Masher
 Sanctioned GunHammer
 War Stamper
 War Basher
 Dark Punisher
 Dragon Demolisher
-Kut Ku Pick
-Kut Ku Pick Plus
+Kut-Ku Pick
+Kut-Ku Pick+
 Great Nova
 Great Titan
 Black Belt Hammer
@@ -313,9 +313,9 @@ Weathered Hammer
 Antique Hammer
 Pulsating Core
 Origin Lance G
-Origin Lance G Plus
+Origin Lance G+
 Longhorn G
-Longhorn G Plus
+Longhorn G+
 Dark
 Sanctioned Gunlance
 Dragon Rider Spear
@@ -335,9 +335,9 @@ Weathered Spear
 Antique Lance
 Matenro
 Origin Knife G
-Origin Knife G Plus
+Origin Knife G+
 Superior Dagger
-Superior Dagger Plus
+Superior Dagger+
 Odyssey Blade
 Deadly Battleaxe
 Kirin Bolt Indora
@@ -345,7 +345,7 @@ True BlackDragon Swd
 Black Ruiner Sword
 Cursed Spirit
 Djinn
-Djinn Plus
+Djinn+
 High Ifrit
 Golden Falchion
 Sandman Spike
@@ -355,7 +355,7 @@ Black Belt Sword
 Expert Sword
 Great Ninja Sword
 Kirin Bolt Kami
-Ultimus Heaven and Earth
+Ultimus Heaven&Earth
 Sanctioned Blades
 Guild Knight Sabers
 Insect Slicer
@@ -372,10 +372,10 @@ Legendary Blades
 Serial Edge
 Upper Battleaxe
 Geyser Sword
-Polytan Plus
+Polytan+
 Doom
 Watercutter
 Coma Rod
 Howling G
 Kirin Bolts
-Gluttons Set
+Glutton's Set

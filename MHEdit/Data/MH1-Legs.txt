@@ -1,8 +1,8 @@
 ﻿Nothing Equipped
 Green Pants
 Blue Pants
-Hunters Greaves
-Hunters Leggings
+Hunter's Greaves
+Hunter's Leggings
 Velociprey Greaves
 Velociprey Leggings
 Genprey Greaves
@@ -21,37 +21,37 @@ Gypceros Greaves
 Gypceros Leggings
 Rathalos Greaves
 Rathalos Leggings
-Gravios Greaves Plus
-Gravios Leggings Plus
-Hi Metal Greaves Plus
-Hi Metal Leggings Plus
+Gravios Greaves+
+Gravios Leggings+
+Hi-Metal Greaves+
+Hi-Metal Leggings+
 Auroros Pants
 Genesis Pants
 Borealis Pants
 Glyph Pants
-Vespoid Greaves Plus
-Vespoid Leggings Plus
-Khezu Greaves Plus
-Khezu Leggings Plus
-Plesioth Greaves Plus
-Plesioth Leggings Plus
-Hornet Greaves Plus
-Hornet Leggings Plus
+Vespoid Greaves+
+Vespoid Leggings+
+Khezu Greaves+
+Khezu Leggings+
+Plesioth Greaves+
+Plesioth Leggings+
+Hornet Greaves+
+Hornet Leggings+
 Dragonfeet
 Dragonlegs
 Guild Knight Boots
 Guild Knight Tights
-Maidens Stockings
+Maiden's Stockings
 Personal Tights
 Silver Boots
 Dark Metal Boots
 Pink Metal Boots
-Shinobi Boots Sun
-Shinobi Boots Moon
+Shinobi Boots (Sun)
+Shinobi Boots (Moon)
 Red Borealis Pants
 Red Glyph Pants
-Hi Metal Greaves
-Hi Metal Leggings
+Hi-Metal Greaves
+Hi-Metal Leggings
 Khezu Greaves
 Khezu Leggings
 Plesioth Greaves
@@ -62,7 +62,7 @@ Hornet Greaves
 Hornet Leggings
 Gravios Greaves
 Gravios Leggings
-Rathian Greaves Plus
-Rathian Leggings Plus
-Rathalos Greaves Plus
-Rathalos Leggings Plus
+Rathian Greaves+
+Rathian Leggings+
+Rathalos Greaves+
+Rathalos Leggings+

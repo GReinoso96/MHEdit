@@ -1,8 +1,8 @@
 ﻿Nothing Equipped
 Leather Belt
 Chain Belt
-Hunters Tasset
-Hunters Coat
+Hunter's Tasset
+Hunter's Coat
 Velociprey Tasset
 Velociprey Coat
 Genprey Tasset
@@ -13,8 +13,8 @@ Rathian Tasset
 Rathian Coat
 Cephalos Tasset
 Cephalos Coat
-Kut Ku Tasset
-Kut Ku Coat
+Kut-Ku Tasset
+Kut-Ku Coat
 Battle Tasset
 Battle Coat
 Bone Tasset
@@ -23,36 +23,36 @@ Gypceros Tasset
 Gypceros Coat
 Rathalos Tasset
 Rathalos Coat
-Gravios Tasset Plus
-Gravios Coat Plus
-Hi Metal Tasset Plus
-Hi Metal Coat Plus
+Gravios Tasset+
+Gravios Coat+
+Hi-Metal Tasset+
+Hi-Metal Coat+
 Auroros Tasset
 Genesis Tasset
 Borealis Tasset
 Glyph Tasset
-Vespoid Tasset Plus
-Vespoid Coat Plus
-Khezu Tasset Plus
-Khezu Coat Plus
-Hornet Tasset Plus
-Hornet Coat Plus
+Vespoid Tasset+
+Vespoid Coat+
+Khezu Tasset+
+Khezu Coat+
+Hornet Tasset+
+Hornet Coat+
 Dragonwings
 Dragontail
 Guild Knight Coat
 Guild Knight Kilt
-Maidens Skirt
+Maiden's Skirt
 Personal Frills
-Shinobi Belt Sun
-Shinobi Belt Moon
+Shinobi Belt (Sun)
+Shinobi Belt (Moon)
 Light Belt
 Hide Belt
 Iron Belt
 Steel Belt
 Red Borealis Tasset
 Red Glyph Tasset
-Hi Metal Tasset
-Hi Metal Coat
+Hi-Metal Tasset
+Hi-Metal Coat
 Khezu Tasset
 Khezu Coat
 Vespoid Tasset
@@ -61,10 +61,10 @@ Hornet Tasset
 Hornet Coat
 Gravios Tasset
 Gravios Coat
-Steel Belt Plus
-Rathian Tasset Plus
-Rathian Coat Plus
-Rathalos Tasset Plus
-Rathalos Coat Plus
-Kut Ku Tasset Plus
-Kut Ku Coat Plus
+Steel Belt+
+Rathian Tasset+
+Rathian Coat+
+Rathalos Tasset+
+Rathalos Coat+
+Kut-Ku Tasset+
+Kut-Ku Coat+

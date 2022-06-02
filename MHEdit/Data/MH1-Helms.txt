@@ -1,8 +1,8 @@
 ﻿Nothing Equipped
 Leather Helm
 Chain Helm
-Hunters Helm
-Hunters Cap
+Hunter's Helm
+Hunter's Cap
 Velociprey Helm
 Velociprey Cap
 Genprey Helm
@@ -23,39 +23,39 @@ Gypceros Helm
 Gypceros Cap
 Rathalos Helm
 Rathalos Cap
-Gravios Helm Plus
-Gravios Cap Plus
-Hi Metal Helm Plus
-Hi Metal Cap Plus
-Diablo Helm Plus
-Diablo Cap Plus
+Gravios Helm+
+Gravios Cap+
+Hi-Metal Helm+
+Hi-Metal Cap+
+Diablo Helm+
+Diablo Cap+
 Auroros Helm
 Genesis Headpiece
 Borealis Crown
 Glyph Crown
-Vespoid Helm Plus
-Vespoid Cap Plus
-Khezu Helm Plus
-Khezu Cap Plus
-Lobster Helm Plus
-Plesioth Helm Plus
-Plesioth Cap Plus
-Hornet Helm Plus
-Hornet Cap Plus 
+Vespoid Helm+
+Vespoid Cap+
+Khezu Helm+
+Khezu Cap+
+Lobster Helm+
+Plesioth Helm+
+Plesioth Cap+
+Hornet Helm+
+Hornet Cap+
 Dragonhead
 Dragonface
 Guild Knight Feather
 Guild Knight Mask
-Maidens Hat
+Maiden's Hat
 Personal Hat
 Velociprey Mask
-Shinobi Mask Sun
-Shinobi Mask Moon
+Shinobi Mask (Sun)
+Shinobi Mask (Moon)
 Mosswine Mask
 Bullfango Mask
 Skull Face
-Hi Metal Helm
-Hi Metal Cap
+Hi-Metal Helm
+Hi-Metal Cap
 Khezu Helm
 Khezu Cap
 Lobster Helm
@@ -69,7 +69,7 @@ Hornet Helm
 Hornet Cap
 Gravios Helm
 Gravios Cap
-Rathian Helm Plus
-Rathian Cap Plus
-Rathalos Helm Plus
-Rathalos Cap Plus
+Rathian Helm+
+Rathian Cap+
+Rathalos Helm+
+Rathalos Cap+

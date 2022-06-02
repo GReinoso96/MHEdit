@@ -1,8 +1,8 @@
 ﻿Nothing Equipped
 Leather Armor
 Chain Mail
-Hunters Mail
-Hunters Vest
+Hunter's Mail
+Hunter's Vest
 Velociprey Mail
 Velociprey Vest
 Genprey Mail
@@ -13,8 +13,8 @@ Rathian Mail
 Rathian Vest
 Cephalos Mail
 Cephalos Vest
-Kut Ku Mail
-Kut Ku Vest
+Kut-Ku Mail
+Kut-Ku Vest
 Battle Mail
 Battle Vest
 Monoblos Mail
@@ -25,37 +25,37 @@ Gypceros Mail
 Gypceros Vest
 Rathalos Mail
 Rathalos Vest
-Gravios Mail Plus
-Gravios Vest Plus
-Hi Metal Mail Plus
-Hi Metal Vest Plus
-Diablo Mail Plus
-Diablo Vest Plus
+Gravios Mail+
+Gravios Vest+
+Hi-Metal Mail+
+Hi-Metal Vest+
+Diablo Mail+
+Diablo Vest+
 Auroros Torso
 Genesis Torso
 Borealis Chest
 Glyph Chest
-Vespoid Mail Plus
-Vespoid Vest Plus
-Khezu Mail Plus
-Khezu Vest Plus
-Lobster Mail Plus
-Lobster Vest Plus
-Plesioth Mail Plus
-Plesioth Vest Plus
-Hornet Mail Plus
-Hornet Vest Plus
+Vespoid Mail+
+Vespoid Vest+
+Khezu Mail+
+Khezu Vest+
+Lobster Mail+
+Lobster Vest+
+Plesioth Mail+
+Plesioth Vest+
+Hornet Mail+
+Hornet Vest+
 Dragonhide
 Dragonskin
 Guild Knight Suit
 Guild Knight Vest
-Maidens Vest
+Maiden's Vest
 Personal Vest
-Shinobi Suit Sun
-Shinobi Suit Moon
+Shinobi Suit (Sun)
+Shinobi Suit (Moon)
 Moss Breastplate
-Hi Metal Mail
-Hi Metal Vest
+Hi-Metal Mail
+Hi-Metal Vest
 Khezu Mail
 Khezu Vest
 Lobster Mail
@@ -71,10 +71,10 @@ Hornet Vest
 Gravios Mail
 Gravios Vest
 Steel Mail
-Steel Mail Plus
-Rathian Mail Plus
-Rathian Vest Plus
-Rathalos Mail Plus
-Rathalos Vest Plus
-Kut Ku Mail Plus
-Kut Ku Vest Plus
+Steel Mail+
+Rathian Mail+
+Rathian Vest+
+Rathalos Mail+
+Rathalos Vest+
+Kut-Ku Mail+
+Kut-Ku Vest+

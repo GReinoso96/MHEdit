@@ -33,6 +33,9 @@
     <None Update="Data\MH1-Legs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\MH1-Skills.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\MH1-Waists.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

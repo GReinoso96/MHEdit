@@ -16,6 +16,7 @@ namespace MHEdit.Helpers
                 armNames = File.ReadAllLines("Data\\MH1-Arms.txt");
                 waistNames = File.ReadAllLines("Data\\MH1-Waists.txt");
                 legNames = File.ReadAllLines("Data\\MH1-Legs.txt");
+                skillNames = File.ReadAllLines("Data\\MH1-Skills.txt");
             }
             catch (Exception ex)
             {
@@ -31,6 +32,7 @@ namespace MHEdit.Helpers
         public static string[] armNames;
         public static string[] waistNames;
         public static string[] legNames;
+        public static string[] skillNames;
 
         //MH1J 0x100088
         public static uint meleeOffset = 0x235340;
@@ -42,24 +44,41 @@ namespace MHEdit.Helpers
         public static uint waistOffset = 0x237F80;
         public static uint legOffset = 0x2384D0;
 
+        public static uint skillsOffsetJP = 0x238A20;
+
         public static uint meleeCountJP = 234;
         public static uint gunnerCountJP = 26;
 
         public static uint headCountJP = 75;
         public static uint chestCountJP = 78;
         public static uint armCountJP = 77;
-        public static uint waistCountJP = 44;
-        public static uint legCountJP = 44;
+        public static uint waistCountJP = 68;
+        public static uint legCountJP = 68;
 
-        //NAFU
-        public static uint meleeOffsetNA = 0x1586B8;
-        public static uint gunnerOffsetNA = 0x15F28C;
+        public static uint skillsCountJP = 84;
 
-        public static uint headOffsetNA = 0x161928;
-        public static uint chestOffsetNA = 0x165D48;
-        public static uint armOffsetNA = 0x169EE8;
-        public static uint waistOffsetNA = 0x16DF20;
-        public static uint legOffsetNA = 0x171F08;
+        //1USA
+        public static uint meleeOffsetNA = 0x48E80;
+        public static uint gunnerOffsetNA = 0x4A6E0;
+
+        public static uint headOffsetNA = 0x4AB20;
+        public static uint chestOffsetNA = 0x4B100;
+        public static uint armOffsetNA = 0x4B740;
+        public static uint waistOffsetNA = 0x4BD70;
+        public static uint legOffsetNA = 0x4C2F0;
+
+        public static uint skillsOffsetNA = 0x4C840;
+
+        public static uint meleeCountNA = 260;
+        public static uint gunnerCountNA = 26;
+
+        public static uint headCountNA = 75;
+        public static uint chestCountNA = 80;
+        public static uint armCountNA = 79;
+        public static uint waistCountNA = 70;
+        public static uint legCountNA = 68;
+
+        public static uint skillsCountNA = 137;
 
         //EUFU
         public static uint meleeOffsetEU = 0x158598;
