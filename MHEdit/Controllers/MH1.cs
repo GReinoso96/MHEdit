@@ -116,6 +116,7 @@ namespace MHEdit.Controllers
                 string armsIn = File.ReadAllText($"{inFolder}\\Armguards.json");
                 string waistIn = File.ReadAllText($"{inFolder}\\Waistpieces.json");
                 string legIn = File.ReadAllText($"{inFolder}\\Leggings.json");
+                string skillsIn = File.ReadAllText($"{inFolder}\\ArmorSkills.json");
                 SaveMelee(outFile, meleeIn);
                 SaveGunner(outFile, gunnerIn);
                 SaveHeads(outFile, headIn);
@@ -123,6 +124,7 @@ namespace MHEdit.Controllers
                 SaveArms(outFile, armsIn);
                 SaveWaists(outFile, waistIn);
                 SaveLegs(outFile, legIn);
+                SaveSkills(outFile, skillsIn);
             }
             catch (Exception ex)
             {
@@ -449,6 +451,30 @@ namespace MHEdit.Controllers
             }
         }
 
+        public static void SaveSkills(string fileIn, string jsonIn)
+        {
+            using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+            {
+                bw.BaseStream.Seek(skillsOffset, SeekOrigin.Begin);
+                Dictionary<string, Equipment.MH1Skills> armorSkills = JsonSerializer.Deserialize<Dictionary<string, Equipment.MH1Skills>>(jsonIn);
+                foreach (var item in armorSkills)
+                {
+                    bw.Write((byte)item.Value.Unk1);
+                    bw.Write((sbyte)item.Value.LegArmor);
+                    bw.Write((sbyte)item.Value.HeadArmor);
+                    bw.Write((sbyte)item.Value.ChestArmor);
+                    bw.Write((sbyte)item.Value.ArmArmor);
+                    bw.Write((sbyte)item.Value.WaistArmor);
+                    bw.Write((byte)item.Value.Skill1);
+                    bw.Write((byte)item.Value.Skill2);
+                    bw.Write((byte)item.Value.Skill3);
+                    bw.Write((byte)item.Value.Skill4);
+                    bw.Write((byte)item.Value.Skill5);
+                    bw.Write((byte)item.Value.Unk2);
+                }
+            }
+        }
+
         public static void SaveGunner(string fileIn, string jsonIn)
         {
             using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
@@ -527,8 +553,8 @@ namespace MHEdit.Controllers
         {
             foreach (var item in parts)
             {
-                bw.Write((UInt16)item.Value.ModelMale);
-                bw.Write((UInt16)item.Value.ModelFemale);
+                bw.Write((byte)item.Value.ModelMale);
+                bw.Write((byte)item.Value.ModelFemale);
                 bw.Write((byte)item.Value.Type);
                 bw.Write((byte)item.Value.Rarity);
                 bw.Write((UInt32)item.Value.Price);

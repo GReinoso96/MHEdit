@@ -1,31 +1,31 @@
 ﻿Nothing Equipped
 Crossbow Gun
-Crossbow Gun Plus
+Crossbow Gun+
 Hornet Gun
 Valkyrie Fire
 Spartacus Fire
-Shotgun Azure
-Shotgun Emerald
-Shotgun Blood
+Shotgun (Azure)
+Shotgun (Emerald)
+Shotgun (Blood)
 Maelstrom
 Sandstorm
 Grenade Launcher
 Titan Launcher
 Arbalest
-Arbalest Plus
+Arbalest+
 Tankmage
 Rapidcaster
 Quickcaster
 Meteor Cannon
 Vor Cannon
-Yian Kut Ku Cannon
-Lao Shan Lung Cannon
+Yian Kut-Ku Cannon
+Lao-Shan Lung Cannon
 Injector Cannon
 Flechette Gun
 Demonlock
 Dark Parasol
 Gravios Roar
-Mega Kut Ku Cannon
+Mega Kut-Ku Cannon
 Great Crossbow Gun
 Valkyrie Flame
 Valkyrie Blaze
@@ -44,15 +44,15 @@ Aqua Blade Shower
 Green Blade Shower
 Crimson Blade Shower
 Bullet Storm
-Maelstrom Plus
-Sandstorm Plus
+Maelstrom+
+Sandstorm+
 Desert Tempest
 Sandfall
-Grenade Launcher Plus
-Titan Launcher Plus
+Grenade Launcher+
+Titan Launcher+
 Chronos Grenade
-Kut Ku Anger
-Kut Ku Rage
+Kut-Ku Anger
+Kut-Ku Rage
 Black Belt Bowgun
 Expert Bowgun
 Island of the Gods
@@ -60,19 +60,19 @@ Dead Parasol
 Angel Parasol
 Sakura Parasol
 Great Arbalest
-Tankmage Plus
+Tankmage+
 Bastionmage
-Quickcaster Plus
+Quickcaster+
 Duelcaster
-Duelcaster Plus
+Duelcaster+
 Monodevilcaster
-Monodevilcaster Plus
+Monodevilcaster+
 Meteor Buster
-Vor Cannon Plus
-Destinys Hand
-Kut Ku Cannon Plus
-Supreme Lao Shan Can
-Empr Lao Shan Cannon
+Vor Cannon+
+Destiny's Hand
+Kut-Ku Cannon+
+Supreme Lao-Shan Can
+Empr Lao-Shan Cannon
 Honeycomber
 Gravios Howl
 Spring Blossomayhem

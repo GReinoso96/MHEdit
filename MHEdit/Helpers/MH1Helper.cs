@@ -55,7 +55,7 @@ namespace MHEdit.Helpers
         public static uint waistCountJP = 68;
         public static uint legCountJP = 68;
 
-        public static uint skillsCountJP = 84;
+        public static uint skillsCountJP = 132;
 
         //1USA
         public static uint meleeOffsetNA = 0x48E80;
