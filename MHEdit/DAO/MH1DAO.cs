@@ -12,23 +12,7 @@ namespace MHEdit.DAO
 {
     internal class MH1DAO : Interfaces.IGen1
     {
-        private static uint skillsOffset = Helpers.MH1Helper.skillsOffsetJP;
-        private static uint meleeOffset = Helpers.MH1Helper.meleeOffset;
-        private static uint gunnerOffset = Helpers.MH1Helper.gunnerOffset;
-        private static uint headOffset = Helpers.MH1Helper.headOffset;
-        private static uint chestOffset = Helpers.MH1Helper.chestOffset;
-        private static uint armOffset = Helpers.MH1Helper.armOffset;
-        private static uint waistOffset = Helpers.MH1Helper.waistOffset;
-        private static uint legOffset = Helpers.MH1Helper.legOffset;
-
-        private static uint skillsCount = Helpers.MH1Helper.skillsCountJP;
-        private static uint meleeCount = Helpers.MH1Helper.meleeCountJP;
-        private static uint gunnerCount = Helpers.MH1Helper.gunnerCountJP;
-        private static uint headCount = Helpers.MH1Helper.headCountJP;
-        private static uint chestCount = Helpers.MH1Helper.chestCountJP;
-        private static uint armCount = Helpers.MH1Helper.armCountJP;
-        private static uint waistCount = Helpers.MH1Helper.waistCountJP;
-        private static uint legCount = Helpers.MH1Helper.legCountJP;
+        private Helpers.MH1JAHelper Helper = new Helpers.MH1JAHelper();
 
         private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
@@ -41,25 +25,11 @@ namespace MHEdit.DAO
             switch (code)
             {
                 case "1U":
-                    meleeOffset = Helpers.MH1Helper.meleeOffsetNA;
-                    gunnerOffset = Helpers.MH1Helper.gunnerOffsetNA;
-                    headOffset = Helpers.MH1Helper.headOffsetNA;
-                    chestOffset = Helpers.MH1Helper.chestOffsetNA;
-                    armOffset = Helpers.MH1Helper.armOffsetNA;
-                    waistOffset = Helpers.MH1Helper.waistOffsetNA;
-                    legOffset = Helpers.MH1Helper.legOffsetNA;
-                    skillsOffset = Helpers.MH1Helper.skillsOffsetNA;
-                    skillsCount = Helpers.MH1Helper.skillsCountNA;
-                    meleeCount = Helpers.MH1Helper.meleeCountNA;
-                    gunnerCount = Helpers.MH1Helper.gunnerCountNA;
-                    headCount = Helpers.MH1Helper.headCountNA;
-                    chestCount = Helpers.MH1Helper.chestCountNA;
-                    armCount = Helpers.MH1Helper.armCountNA;
-                    waistCount = Helpers.MH1Helper.waistCountNA;
-                    legCount = Helpers.MH1Helper.legCountNA;
+                    Helper = new Helpers.MH1NAHelper();
                     break;
                 case "1J":
                 default:
+                    Helper = new Helpers.MH1JAHelper();
                     break;
             }
         }
@@ -68,11 +38,11 @@ namespace MHEdit.DAO
         {
             var melee = GetMelee(inFile);
             var gunner = GetGunner(inFile);
-            var head = GetArmorParts(inFile, headOffset, headCount, Helpers.MH1Helper.headNames);
-            var chest = GetArmorParts(inFile, chestOffset, chestCount, Helpers.MH1Helper.chestNames);
-            var arm = GetArmorParts(inFile, armOffset, armCount, Helpers.MH1Helper.armNames);
-            var waist = GetArmorParts(inFile, waistOffset, waistCount, Helpers.MH1Helper.waistNames);
-            var leg = GetArmorParts(inFile, legOffset, legCount, Helpers.MH1Helper.legNames);
+            var head = GetArmorParts(inFile, Helper.headOffset, Helper.headCount, Helper.headNames);
+            var chest = GetArmorParts(inFile, Helper.chestOffset, Helper.chestCount, Helper.chestNames);
+            var arm = GetArmorParts(inFile, Helper.armOffset, Helper.armCount, Helper.armNames);
+            var waist = GetArmorParts(inFile, Helper.waistOffset, Helper.waistCount, Helper.waistNames);
+            var leg = GetArmorParts(inFile, Helper.legOffset, Helper.legCount ,Helper.legNames);
             var skills = GetSkills(inFile);
 
             try
@@ -127,9 +97,9 @@ namespace MHEdit.DAO
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(gunnerOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                 Dictionary<string, DTO.MHJGunner> gunnerWeapons = new();
-                for (int i = 0; i < gunnerCount; i++)
+                for (int i = 0; i < Helper.gunnerCount; i++)
                 {
                     DTO.MHJGunner weapon = new(
                         br.ReadByte(),
@@ -144,7 +114,7 @@ namespace MHEdit.DAO
                         br.ReadByte(),
                         br.ReadByte(),
                         br.ReadByte());
-                    gunnerWeapons.Add(Helpers.MH1Helper.gunnerNames[i], weapon);
+                    gunnerWeapons.Add(Helper.gunnerNames[i], weapon);
                 }
 
                 string jsonString = JsonSerializer.Serialize(gunnerWeapons, JsonOptions);
@@ -156,9 +126,9 @@ namespace MHEdit.DAO
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(meleeOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(Helper.meleeOffset, SeekOrigin.Begin);
                 Dictionary<string, DTO.MH1Melee> meleeWeapons = new();
-                for (int i = 0; i < meleeCount; i++)
+                for (int i = 0; i < Helper.meleeCount; i++)
                 {
                     DTO.MH1Melee weapon = new(
                         br.ReadByte(),
@@ -176,7 +146,7 @@ namespace MHEdit.DAO
                         br.ReadByte(),
                         br.ReadUInt16(),
                         br.ReadUInt32());
-                    meleeWeapons.Add(Helpers.MH1Helper.meleeNames[i], weapon);
+                    meleeWeapons.Add(Helper.meleeNames[i], weapon);
                 }
 
                 string jsonString = JsonSerializer.Serialize(meleeWeapons, JsonOptions);
@@ -188,9 +158,9 @@ namespace MHEdit.DAO
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(skillsOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(Helper.skillsOffset, SeekOrigin.Begin);
                 Dictionary<int, DTO.MH1Skills> armorSkills = new();
-                for (int i = 0; i < skillsCount; i++)
+                for (int i = 0; i < Helper.skillsCount; i++)
                 {
                     DTO.MH1Skills skill = new(
                         br.ReadByte(),
@@ -227,11 +197,11 @@ namespace MHEdit.DAO
                 string skillsIn = File.ReadAllText($"{inFolder}\\ArmorSkills.json");
                 SaveMelee(outFile, meleeIn);
                 SaveGunner(outFile, gunnerIn);
-                SaveArmorParts(outFile, headIn, headOffset);
-                SaveArmorParts(outFile, chestIn, chestOffset);
-                SaveArmorParts(outFile, armsIn, armOffset);
-                SaveArmorParts(outFile, waistIn, waistOffset);
-                SaveArmorParts(outFile, legIn, legOffset);
+                SaveArmorParts(outFile, headIn, Helper.headOffset);
+                SaveArmorParts(outFile, chestIn, Helper.chestOffset);
+                SaveArmorParts(outFile, armsIn, Helper.armOffset);
+                SaveArmorParts(outFile, waistIn, Helper.waistOffset);
+                SaveArmorParts(outFile, legIn, Helper.legOffset);
                 SaveSkills(outFile, skillsIn);
             }
             catch (Exception ex)
@@ -274,7 +244,7 @@ namespace MHEdit.DAO
             {
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
-                    bw.BaseStream.Seek(gunnerOffset, SeekOrigin.Begin);
+                    bw.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                     Dictionary<string, DTO.MHJGunner> gunnerWeapons = JsonSerializer.Deserialize<Dictionary<string, DTO.MHJGunner>>(jsonIn);
                     foreach (KeyValuePair<string, MHJGunner> item in gunnerWeapons)
                     {
@@ -301,7 +271,7 @@ namespace MHEdit.DAO
             {
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
-                    bw.BaseStream.Seek(meleeOffset, SeekOrigin.Begin);
+                    bw.BaseStream.Seek(Helper.meleeOffset, SeekOrigin.Begin);
                     Dictionary<string, DTO.MH1Melee> meleeWeapons = JsonSerializer.Deserialize<Dictionary<string, DTO.MH1Melee>>(jsonIn);
                     foreach (var item in meleeWeapons)
                     {
@@ -331,7 +301,7 @@ namespace MHEdit.DAO
             {
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
-                    bw.BaseStream.Seek(skillsOffset, SeekOrigin.Begin);
+                    bw.BaseStream.Seek(Helper.skillsOffset, SeekOrigin.Begin);
                     Dictionary<string, DTO.MH1Skills> armorSkills = JsonSerializer.Deserialize<Dictionary<string, DTO.MH1Skills>>(jsonIn);
                     foreach (var item in armorSkills)
                     {

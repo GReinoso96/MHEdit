@@ -12,21 +12,7 @@ namespace MHEdit.DAO
 {
     internal class P2GDAO : Interfaces.IController
     {
-        private static uint meleeOffset = Helpers.P2GHelper.meleeOffset;
-        private static uint gunnerOffset = Helpers.P2GHelper.gunnerOffset;
-        private static uint headOffset = Helpers.P2GHelper.headOffset;
-        private static uint chestOffset = Helpers.P2GHelper.chestOffset;
-        private static uint armOffset = Helpers.P2GHelper.armOffset;
-        private static uint waistOffset = Helpers.P2GHelper.waistOffset;
-        private static uint legOffset = Helpers.P2GHelper.legOffset;
-
-        private static uint meleeCount = Helpers.P2GHelper.meleeCount;
-        private static uint gunnerCount = Helpers.P2GHelper.gunnerCount;
-        private static uint headCount = Helpers.P2GHelper.headCount;
-        private static uint chestCount = Helpers.P2GHelper.chestCount;
-        private static uint armCount = Helpers.P2GHelper.armCount;
-        private static uint waistCount = Helpers.P2GHelper.waistCount;
-        private static uint legCount = Helpers.P2GHelper.legCount;
+        private Helpers.P2GHelper Helper = new Helpers.P2GHelper();
 
         private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
@@ -39,25 +25,14 @@ namespace MHEdit.DAO
             switch (code)
             {
                 case "NAFU":
-                    meleeOffset = Helpers.P2GHelper.meleeOffsetNA;
-                    gunnerOffset = Helpers.P2GHelper.gunnerOffsetNA;
-                    headOffset = Helpers.P2GHelper.headOffsetNA;
-                    chestOffset = Helpers.P2GHelper.chestOffsetNA;
-                    armOffset = Helpers.P2GHelper.armOffsetNA;
-                    waistOffset = Helpers.P2GHelper.waistOffsetNA;
-                    legOffset = Helpers.P2GHelper.legOffsetNA;
+                    Helper = new Helpers.NAFUHelper();
                     break;
                 case "EUFU":
-                    meleeOffset = Helpers.P2GHelper.meleeOffsetEU;
-                    gunnerOffset = Helpers.P2GHelper.gunnerOffsetEU;
-                    headOffset = Helpers.P2GHelper.headOffsetEU;
-                    chestOffset = Helpers.P2GHelper.chestOffsetEU;
-                    armOffset = Helpers.P2GHelper.armOffsetEU;
-                    waistOffset = Helpers.P2GHelper.waistOffsetEU;
-                    legOffset = Helpers.P2GHelper.legOffsetEU;
+                    Helper = new Helpers.EUFUHelper();
                     break;
                 case "P2G":
                 default:
+                    Helper = new Helpers.P2GHelper();
                     break;
             }
         }
@@ -66,11 +41,11 @@ namespace MHEdit.DAO
         {
             var melee = GetMelee(inFile);
             var gunner = GetGunner(inFile);
-            var head = GetArmorParts(inFile, headOffset, headCount, Helpers.P2GHelper.headNames);
-            var chest = GetArmorParts(inFile, chestOffset, chestCount, Helpers.P2GHelper.chestNames);
-            var arm = GetArmorParts(inFile, armOffset, armCount, Helpers.P2GHelper.armNames);
-            var waist = GetArmorParts(inFile, waistOffset, waistCount, Helpers.P2GHelper.waistNames);
-            var leg = GetArmorParts(inFile, legOffset, legCount, Helpers.P2GHelper.legNames);
+            var head = GetArmorParts(inFile, Helper.headCount, Helper.headCount, Helper.headNames);
+            var chest = GetArmorParts(inFile, Helper.chestOffset, Helper.chestCount, Helper.chestNames);
+            var arm = GetArmorParts(inFile, Helper.armOffset, Helper.armCount, Helper.armNames);
+            var waist = GetArmorParts(inFile, Helper.waistOffset, Helper.waistCount, Helper.waistNames);
+            var leg = GetArmorParts(inFile, Helper.legOffset, Helper.legCount, Helper.legNames);
 
             try
             {
@@ -143,9 +118,9 @@ namespace MHEdit.DAO
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(gunnerOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                 Dictionary<string, DTO.P2GGunner> gunnerWeapons = new();
-                for (int i = 0; i < gunnerCount; i++)
+                for (int i = 0; i < Helper.gunnerCount; i++)
                 {
                     DTO.P2GGunner weapon = new(
                         br.ReadUInt16(),
@@ -167,7 +142,7 @@ namespace MHEdit.DAO
                         br.ReadByte(),
                         br.ReadByte(),
                         br.ReadByte());
-                    gunnerWeapons.Add($"{i}-{Helpers.P2GHelper.gunnerNames[i]}", weapon);
+                    gunnerWeapons.Add($"{i}-{Helper.gunnerNames[i]}", weapon);
                 }
 
                 string jsonString = JsonSerializer.Serialize(gunnerWeapons, JsonOptions);
@@ -179,9 +154,9 @@ namespace MHEdit.DAO
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(meleeOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(Helper.meleeOffset, SeekOrigin.Begin);
                 Dictionary<string, DTO.P2GMelee> meleeWeapons = new();
-                for (int i = 0; i < meleeCount; i++)
+                for (int i = 0; i < Helper.meleeCount; i++)
                 {
                     DTO.P2GMelee weapon = new(
                         br.ReadUInt16(),
@@ -201,7 +176,7 @@ namespace MHEdit.DAO
                         br.ReadByte(),
                         br.ReadUInt16(),
                         br.ReadByte());
-                    meleeWeapons.Add($"{i}-{Helpers.P2GHelper.meleeNames[i]}", weapon);
+                    meleeWeapons.Add($"{i}-{Helper.meleeNames[i]}", weapon);
                 }
 
                 string jsonString = JsonSerializer.Serialize(meleeWeapons, JsonOptions);
@@ -222,11 +197,11 @@ namespace MHEdit.DAO
                 string legIn = File.ReadAllText($"{inFolder}\\Leggings.json");
                 SaveMelee(outFile, meleeIn);
                 SaveGunner(outFile, gunnerIn);
-                SaveArmorParts(outFile, headIn, headOffset);
-                SaveArmorParts(outFile, chestIn, chestOffset);
-                SaveArmorParts(outFile, armsIn, armOffset);
-                SaveArmorParts(outFile, waistIn, waistOffset);
-                SaveArmorParts(outFile, legIn, legOffset);
+                SaveArmorParts(outFile, headIn, Helper.headOffset);
+                SaveArmorParts(outFile, chestIn, Helper.chestOffset);
+                SaveArmorParts(outFile, armsIn, Helper.armOffset);
+                SaveArmorParts(outFile, waistIn, Helper.waistOffset);
+                SaveArmorParts(outFile, legIn, Helper.legOffset);
             }
             catch (Exception ex)
             {
@@ -288,7 +263,7 @@ namespace MHEdit.DAO
             {
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
-                    bw.BaseStream.Seek(gunnerOffset, SeekOrigin.Begin);
+                    bw.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                     Dictionary<string, DTO.P2GGunner> gunnerWeapons = JsonSerializer.Deserialize<Dictionary<string, DTO.P2GGunner>>(jsonIn);
                     foreach (KeyValuePair<string, P2GGunner> item in gunnerWeapons)
                     {
@@ -322,7 +297,7 @@ namespace MHEdit.DAO
             {
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
-                    bw.BaseStream.Seek(meleeOffset, SeekOrigin.Begin);
+                    bw.BaseStream.Seek(Helper.meleeOffset, SeekOrigin.Begin);
                     Dictionary<string, DTO.P2GMelee> meleeWeapons = JsonSerializer.Deserialize<Dictionary<string, DTO.P2GMelee>>(jsonIn);
                     foreach (var item in meleeWeapons)
                     {

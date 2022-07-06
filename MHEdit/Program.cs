@@ -5,7 +5,7 @@ if (args.Length >= 4)
 {
     if (args[0].Equals("1J") || args[0].Equals("1U"))
     {
-        MH1DAO DAO = new MH1DAO();
+        MH1DAO DAO = new();
         DAO.SetGame(args[0]);
         if (args[1].Equals("-d", StringComparison.OrdinalIgnoreCase))
         {
@@ -18,7 +18,7 @@ if (args.Length >= 4)
     }
     else if (args[0].Equals("NAFU") || args[0].Equals("EUFU") || args[0].Equals("P2G"))
     {
-        P2GDAO DAO = new P2GDAO();
+        P2GDAO DAO = new();
         DAO.SetGame(args[0]);
         if (args[1].Equals("-d", StringComparison.OrdinalIgnoreCase))
         {
