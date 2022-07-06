@@ -42,11 +42,11 @@ namespace MHEdit.DAO
         {
             var melee = GetMelee(inFile);
             var gunner = GetGunner(inFile);
-            var head = GetArmorParts(inFile, Helper.headCount, Helper.headCount, Helper.headNames);
-            var chest = GetArmorParts(inFile, Helper.chestOffset, Helper.chestCount, Helper.chestNames);
-            var arm = GetArmorParts(inFile, Helper.armOffset, Helper.armCount, Helper.armNames);
-            var waist = GetArmorParts(inFile, Helper.waistOffset, Helper.waistCount, Helper.waistNames);
-            var leg = GetArmorParts(inFile, Helper.legOffset, Helper.legCount, Helper.legNames);
+            var head = GetArmorParts(inFile, Helper.HeadCount, Helper.HeadCount, Helper.HeadNames);
+            var chest = GetArmorParts(inFile, Helper.ChestOffset, Helper.ChestCount, Helper.ChestNames);
+            var arm = GetArmorParts(inFile, Helper.ArmOffset, Helper.ArmCount, Helper.ArmNames);
+            var waist = GetArmorParts(inFile, Helper.WaistOffset, Helper.WaistCount, Helper.WaistNames);
+            var leg = GetArmorParts(inFile, Helper.LegOffset, Helper.LegCount, Helper.LegNames);
 
             try
             {
@@ -121,7 +121,7 @@ namespace MHEdit.DAO
             {
                 br.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                 Dictionary<string, DTO.P2GGunner> gunnerWeapons = new();
-                for (int i = 0; i < Helper.gunnerCount; i++)
+                for (int i = 0; i < Helper.GunnerCount; i++)
                 {
                     DTO.P2GGunner weapon = new(
                         br.ReadUInt16(),
@@ -143,7 +143,7 @@ namespace MHEdit.DAO
                         br.ReadByte(),
                         br.ReadByte(),
                         br.ReadByte());
-                    gunnerWeapons.Add($"{i}-{Helper.gunnerNames[i]}", weapon);
+                    gunnerWeapons.Add($"{i}-{Helper.GunnerNames[i]}", weapon);
                 }
 
                 string jsonString = JsonSerializer.Serialize(gunnerWeapons, JsonOptions);
@@ -155,9 +155,9 @@ namespace MHEdit.DAO
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
             {
-                br.BaseStream.Seek(Helper.meleeOffset, SeekOrigin.Begin);
+                br.BaseStream.Seek(Helper.MeleeOffset, SeekOrigin.Begin);
                 Dictionary<string, DTO.P2GMelee> meleeWeapons = new();
-                for (int i = 0; i < Helper.meleeCount; i++)
+                for (int i = 0; i < Helper.MeleeCount; i++)
                 {
                     DTO.P2GMelee weapon = new(
                         br.ReadUInt16(),
@@ -177,7 +177,7 @@ namespace MHEdit.DAO
                         br.ReadByte(),
                         br.ReadUInt16(),
                         br.ReadByte());
-                    meleeWeapons.Add($"{i}-{Helper.meleeNames[i]}", weapon);
+                    meleeWeapons.Add($"{i}-{Helper.MeleeNames[i]}", weapon);
                 }
 
                 string jsonString = JsonSerializer.Serialize(meleeWeapons, JsonOptions);
@@ -198,11 +198,11 @@ namespace MHEdit.DAO
                 string legIn = File.ReadAllText($"{inFolder}\\Leggings.json");
                 SaveMelee(outFile, meleeIn);
                 SaveGunner(outFile, gunnerIn);
-                SaveArmorParts(outFile, headIn, Helper.headOffset);
-                SaveArmorParts(outFile, chestIn, Helper.chestOffset);
-                SaveArmorParts(outFile, armsIn, Helper.armOffset);
-                SaveArmorParts(outFile, waistIn, Helper.waistOffset);
-                SaveArmorParts(outFile, legIn, Helper.legOffset);
+                SaveArmorParts(outFile, headIn, Helper.HeadOffset);
+                SaveArmorParts(outFile, chestIn, Helper.ChestOffset);
+                SaveArmorParts(outFile, armsIn, Helper.ArmOffset);
+                SaveArmorParts(outFile, waistIn, Helper.WaistOffset);
+                SaveArmorParts(outFile, legIn, Helper.LegOffset);
             }
             catch (Exception ex)
             {
@@ -298,7 +298,7 @@ namespace MHEdit.DAO
             {
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
-                    bw.BaseStream.Seek(Helper.meleeOffset, SeekOrigin.Begin);
+                    bw.BaseStream.Seek(Helper.MeleeOffset, SeekOrigin.Begin);
                     Dictionary<string, DTO.P2GMelee> meleeWeapons = JsonSerializer.Deserialize<Dictionary<string, DTO.P2GMelee>>(jsonIn);
                     foreach (var item in meleeWeapons)
                     {
@@ -322,6 +322,16 @@ namespace MHEdit.DAO
                     }
                 }
             }
+        }
+
+        public string GetCrafting(string fileIn, uint offset, uint count)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveCrafting(string fileIn, string jsonIn, uint offset)
+        {
+            throw new NotImplementedException();
         }
     }
 }

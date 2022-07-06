@@ -14,8 +14,10 @@ namespace MHEdit.Interfaces
         string GetArmorParts(string inFile, uint offset, uint count, string[] names);
         string GetGunner(string fileIn);
         string GetMelee(string fileIn);
+        string GetCrafting(string fileIn, uint offset, uint count);
         void SaveArmorParts(string fileIn, string jsonIn, uint offset);
         void SaveMelee(string fileIn, string jsonIn);
         void SaveGunner(string fileIn, string jsonIn);
+        void SaveCrafting(string fileIn, string jsonIn, uint offset);
     }
 }
