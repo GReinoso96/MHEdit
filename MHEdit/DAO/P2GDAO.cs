@@ -1,4 +1,5 @@
 ﻿using MHEdit.DTO;
+using MHEdit.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace MHEdit.DAO
 {
     internal class P2GDAO : Interfaces.IController
     {
-        private Helpers.P2GHelper Helper = new Helpers.P2GHelper();
+        private BaseHelper Helper = new P2GHelper();
 
         private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
@@ -25,14 +26,14 @@ namespace MHEdit.DAO
             switch (code)
             {
                 case "NAFU":
-                    Helper = new Helpers.NAFUHelper();
+                    Helper = new NAFUHelper();
                     break;
                 case "EUFU":
-                    Helper = new Helpers.EUFUHelper();
+                    Helper = new EUFUHelper();
                     break;
                 case "P2G":
                 default:
-                    Helper = new Helpers.P2GHelper();
+                    Helper = new P2GHelper();
                     break;
             }
         }

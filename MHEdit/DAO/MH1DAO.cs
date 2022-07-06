@@ -1,4 +1,6 @@
 ﻿using MHEdit.DTO;
+using MHEdit.Helpers;
+using MHEdit.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,7 @@ namespace MHEdit.DAO
 {
     internal class MH1DAO : Interfaces.IGen1
     {
-        private Helpers.MH1JAHelper Helper = new Helpers.MH1JAHelper();
+        private BaseHelper Helper = new MH1JAHelper();
 
         private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
@@ -24,12 +26,12 @@ namespace MHEdit.DAO
         {
             switch (code)
             {
-                case "1U":
-                    Helper = new Helpers.MH1NAHelper();
+                case "1NA":
+                    Helper = new MH1NAHelper();
                     break;
-                case "1J":
+                case "1JA":
                 default:
-                    Helper = new Helpers.MH1JAHelper();
+                    Helper = new MH1JAHelper();
                     break;
             }
         }

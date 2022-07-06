@@ -3,7 +3,7 @@
 
 if (args.Length >= 4)
 {
-    if (args[0].Equals("1J") || args[0].Equals("1U"))
+    if (args[0].Equals("1JA") || args[0].Equals("1NA"))
     {
         MH1DAO DAO = new();
         DAO.SetGame(args[0]);

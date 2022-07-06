@@ -1,30 +1,50 @@
-﻿using System;
+﻿using MHEdit.Interfaces;
+using System;
 using System.IO;
 
 namespace MHEdit.Helpers
 {
-    internal class MH1NAHelper : MH1JAHelper
+    internal class MH1NAHelper : BaseHelper
     {
-        public new uint meleeOffset = 0x48E80;
-        public new uint gunnerOffset = 0x4A6E0;
+        public MH1NAHelper()
+        {
+            meleeOffset = 0x48E80;
+            gunnerOffset = 0x4A6E0;
 
-        public new uint headOffset = 0x4AB20;
-        public new uint chestOffset = 0x4B100;
-        public new uint armOffset = 0x4B740;
-        public new uint waistOffset = 0x4BD70;
-        public new uint legOffset = 0x4C2F0;
+            headOffset = 0x4AB20;
+            chestOffset = 0x4B100;
+            armOffset = 0x4B740;
+            waistOffset = 0x4BD70;
+            legOffset = 0x4C2F0;
 
-        public new uint skillsOffset = 0x4C840;
+            skillsOffset = 0x4C840;
 
-        public new uint meleeCount = 260;
-        public new uint gunnerCount = 26;
+            meleeCount = 260;
+            gunnerCount = 26;
 
-        public new uint headCount = 75;
-        public new uint chestCount = 80;
-        public new uint armCount = 79;
-        public new uint waistCount = 70;
-        public new uint legCount = 68;
+            headCount = 75;
+            chestCount = 80;
+            armCount = 79;
+            waistCount = 70;
+            legCount = 68;
 
-        public new uint skillsCount = 137;
+            skillsCount = 137;
+
+            try
+            {
+                meleeNames = File.ReadAllLines("Data\\MHG-Melee.txt");
+                gunnerNames = File.ReadAllLines("Data\\MHG-Gunner.txt");
+                headNames = File.ReadAllLines("Data\\MH1-Helms.txt");
+                chestNames = File.ReadAllLines("Data\\MH1-Chests.txt");
+                armNames = File.ReadAllLines("Data\\MH1-Arms.txt");
+                waistNames = File.ReadAllLines("Data\\MH1-Waists.txt");
+                legNames = File.ReadAllLines("Data\\MH1-Legs.txt");
+                skillNames = File.ReadAllLines("Data\\MH1-Skills.txt");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
     }
 }
