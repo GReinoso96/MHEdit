@@ -31,7 +31,7 @@ MHEdit.exe P2G -i p2 EBOOT.BIN
 | Game | Code | Blademaster Weapons | Gunner Weapons | Armors |
 | --- | --- | --- | --- | --- |
 | P2G/FU | P2G, NAFU, EUFU | Yes | Yes | Yes |
-| MH1 | 1J, 1U | Yes | Yes | Yes |
+| MH1 | 1NA, 1JA | Yes | Yes | Yes |
 | MHG | MHGJ, MHGK, GWII | TBD | TBD | TBD |
 | P1/F1 | P1, NAF1, EUF1 | TBD | TBD | TBD |
 | P2/F2 | P2, NAF2, EUF2 | TBD | TBD | TBD |
