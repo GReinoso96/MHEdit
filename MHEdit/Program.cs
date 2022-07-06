@@ -1,39 +1,32 @@
-﻿using System;
-using System.IO;
+﻿using MHEdit.DAO;
 
-namespace MHEdit
+
+if (args.Length >= 4)
 {
-    internal class Program
+    if (args[0].Equals("1J") || args[0].Equals("1U"))
     {
-        static void Main(string[] args)
+        MH1DAO DAO = new MH1DAO();
+        DAO.SetGame(args[0]);
+        if (args[1].Equals("-d", StringComparison.OrdinalIgnoreCase))
         {
-            if (args.Length >= 4)
-            {
-                if (args[0].Equals("P2G") || args[0].Equals("NAFU") || args[0].Equals("EUFU"))
-                {
-                    Controllers.P2G.SetGame(args[0]);
-                    if (args[1].Equals("-d", StringComparison.OrdinalIgnoreCase))
-                    {
-                        Controllers.P2G.DumpData(args[2], args[3]);
-                    }
-                    else if (args[1].Equals("-i", StringComparison.OrdinalIgnoreCase))
-                    {
-                        Controllers.P2G.LoadData(args[2], args[3]);
-                    }
-                }
-                if (args[0].Equals("MH1J") || args[0].Equals("1USA") || args[0].Equals("1EUR"))
-                {
-                    Controllers.MH1.SetGame(args[0]);
-                    if (args[1].Equals("-d", StringComparison.OrdinalIgnoreCase))
-                    {
-                        Controllers.MH1.DumpData(args[2], args[3]);
-                    }
-                    else if (args[1].Equals("-i", StringComparison.OrdinalIgnoreCase))
-                    {
-                        Controllers.MH1.LoadData(args[2], args[3]);
-                    }
-                }
-            }
+            DAO.DumpData(args[2], args[3]);
+        }
+        else if (args[1].Equals("-i", StringComparison.OrdinalIgnoreCase))
+        {
+            DAO.LoadData(args[2], args[3]);
+        }
+    }
+    else if (args[0].Equals("NAFU") || args[0].Equals("EUFU") || args[0].Equals("P2G"))
+    {
+        P2GDAO DAO = new P2GDAO();
+        DAO.SetGame(args[0]);
+        if (args[1].Equals("-d", StringComparison.OrdinalIgnoreCase))
+        {
+            DAO.DumpData(args[2], args[3]);
+        }
+        else if (args[1].Equals("-i", StringComparison.OrdinalIgnoreCase))
+        {
+            DAO.LoadData(args[2], args[3]);
         }
     }
 }

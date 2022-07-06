@@ -1,6 +1,6 @@
 # MHEdit
 
-Generic Monster Hunter Equipment Modding Tool using .NET Core 5.0
+Generic Monster Hunter Equipment Modding Tool using .NET Core 6.0
 
 # Usage
 MHEdit is a command line tool, it exports editable JSON files that can then be reinserted into the game.
@@ -26,18 +26,22 @@ MHEdit.exe [Code] -i [Out Folder] eboot.bin
 MHEdit.exe P2G -i p2 EBOOT.BIN
 ```
 
-# Supported Games
+# Supported Games - Roadmap
 
 | Game | Code | Blademaster Weapons | Gunner Weapons | Armors |
 | --- | --- | --- | --- | --- |
 | P2G/FU | P2G, NAFU, EUFU | Yes | Yes | Yes |
-| MH1J | MH1J | Yes | Yes | Yes |
-| MH1 | MH1USA, MH1EUR | TBD | TBD | TBD |
-| P2/F2 | P2, NAF2, EUF2 | TBD | TBD | TBD |
+| MH1 | 1J, 1U | Yes | Yes | Yes |
+| MHG | MHGJ, MHGK, GWII | TBD | TBD | TBD |
 | P1/F1 | P1, NAF1, EUF1 | TBD | TBD | TBD |
-| MHG | PS2G, WIIG | TBD | TBD | TBD |
+| P2/F2 | P2, NAF2, EUF2 | TBD | TBD | TBD |
 | MH2 | DOS | TBD | TBD | TBD |
 | MH3 | NATRI, EUTRI, JPTRI | TBD | TBD | TBD |
+
+## Notes
+Support for the European version of MH1 is not currently planned as the game keeps copies of all the necessary data on a per-language basis.
+
+Support for the Wii version of G may not be implemented until Tri support, as the games require handling of Big Endian data.
 
 # Future Support
 

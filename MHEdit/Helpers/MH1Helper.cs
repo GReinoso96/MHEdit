@@ -79,15 +79,5 @@ namespace MHEdit.Helpers
         public static uint legCountNA = 68;
 
         public static uint skillsCountNA = 137;
-
-        //EUFU
-        public static uint meleeOffsetEU = 0x158598;
-        public static uint gunnerOffsetEU = 0x15F16C;
-
-        public static uint headOffsetEU = 0x161808;
-        public static uint chestOffsetEU = 0x165C28;
-        public static uint armOffsetEU = 0x169DC8;
-        public static uint waistOffsetEU = 0x16DE00;
-        public static uint legOffsetEU = 0x171DE8;
     }
 }

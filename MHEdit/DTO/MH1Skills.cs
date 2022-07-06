@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MHEdit.Equipment
+namespace MHEdit.DTO
 {
     internal class MH1Skills
     {
