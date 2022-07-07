@@ -1,6 +1,5 @@
 ﻿using MHEdit.DTO;
 using MHEdit.Helpers;
-using MHEdit.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace MHEdit.DAO
 {
-    internal class MH1DAO : Interfaces.IGen1
+    internal class MHGDAO : Interfaces.IController
     {
-        private BaseHelper Helper = new MH1JAHelper();
+        private BaseHelper Helper = new MHGJAHelper();
 
         private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
@@ -26,12 +25,15 @@ namespace MHEdit.DAO
         {
             switch (code)
             {
-                case "1NA":
-                    Helper = new MH1NAHelper();
+                case "GWII":
+                    //Helper = new MH1NAHelper();
                     break;
-                case "1JA":
+                case "GJA":
+                    Helper = new MHGJAHelper();
+                    break;
+                case "GKO":
                 default:
-                    Helper = new MH1JAHelper();
+                    Helper = new MHGKOHelper();
                     break;
             }
         }
@@ -44,8 +46,7 @@ namespace MHEdit.DAO
             var chest = GetArmorParts(inFile, Helper.ChestOffset, Helper.ChestCount, Helper.ChestNames);
             var arm = GetArmorParts(inFile, Helper.ArmOffset, Helper.ArmCount, Helper.ArmNames);
             var waist = GetArmorParts(inFile, Helper.WaistOffset, Helper.WaistCount, Helper.WaistNames);
-            var leg = GetArmorParts(inFile, Helper.LegOffset, Helper.LegCount ,Helper.LegNames);
-            var skills = GetSkills(inFile);
+            var leg = GetArmorParts(inFile, Helper.LegOffset, Helper.LegCount, Helper.LegNames);
             var weaponCrafts = GetCrafting(inFile, Helper.WeaponCraftOffset, Helper.WeaponCraftCount);
             var armorCrafts = GetCrafting(inFile, Helper.ArmorCraftOffset, Helper.ArmorCraftCount);
             var upgrades = GetUpgrades(inFile);
@@ -60,7 +61,6 @@ namespace MHEdit.DAO
                 File.WriteAllText($"{outFolder}\\Armguards.json", arm);
                 File.WriteAllText($"{outFolder}\\Waistpieces.json", waist);
                 File.WriteAllText($"{outFolder}\\Leggings.json", leg);
-                File.WriteAllText($"{outFolder}\\ArmorSkills.json", skills);
                 File.WriteAllText($"{outFolder}\\WeaponCraft.json", weaponCrafts);
                 File.WriteAllText($"{outFolder}\\ArmorCraft.json", armorCrafts);
                 File.WriteAllText($"{outFolder}\\WeaponUpgrades.json", upgrades);
@@ -73,13 +73,13 @@ namespace MHEdit.DAO
 
         public string GetArmorParts(string inFile, uint offset, uint count, string[] names)
         {
-            using(BinaryReader br = new(File.OpenRead(inFile)))
+            using (BinaryReader br = new(File.OpenRead(inFile)))
             {
                 br.BaseStream.Seek(offset, SeekOrigin.Begin);
-                Dictionary<string, MH1Armor> parts = new();
+                Dictionary<string, MHGArmor> parts = new();
                 for (int i = 0; i < count; i++)
                 {
-                    MH1Armor part = new(
+                    MHGArmor part = new(
                         br.ReadByte(),
                         br.ReadByte(),
                         br.ReadByte(),
@@ -90,9 +90,20 @@ namespace MHEdit.DAO
                         br.ReadSByte(),
                         br.ReadSByte(),
                         br.ReadSByte(),
-                        br.ReadByte(),
                         br.ReadUInt16(),
-                        br.ReadUInt32());
+                        br.ReadByte(),
+                        br.ReadUInt32(),
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadByte(),
+                        br.ReadSByte(),
+                        br.ReadUInt16());
                     parts.Add(names[i], part);
                 }
 
@@ -162,35 +173,6 @@ namespace MHEdit.DAO
             }
         }
 
-        public string GetSkills(string fileIn)
-        {
-            using (BinaryReader br = new(File.OpenRead(fileIn)))
-            {
-                br.BaseStream.Seek(Helper.SkillsOffset, SeekOrigin.Begin);
-                Dictionary<int, MH1Skills> armorSkills = new();
-                for (int i = 0; i < Helper.SkillsCount; i++)
-                {
-                    MH1Skills skill = new(
-                        br.ReadByte(),
-                        br.ReadSByte(),
-                        br.ReadSByte(),
-                        br.ReadSByte(),
-                        br.ReadSByte(),
-                        br.ReadSByte(),
-                        br.ReadByte(),
-                        br.ReadByte(),
-                        br.ReadByte(),
-                        br.ReadByte(),
-                        br.ReadByte(),
-                        br.ReadByte());
-                    armorSkills.Add(i, skill);
-                }
-
-                string jsonString = JsonSerializer.Serialize(armorSkills, JsonOptions);
-                return jsonString;
-            }
-        }
-
         public string GetUpgrades(string fileIn)
         {
             using (BinaryReader br = new(File.OpenRead(fileIn)))
@@ -231,7 +213,6 @@ namespace MHEdit.DAO
                 string armsIn = File.ReadAllText($"{inFolder}\\Armguards.json");
                 string waistIn = File.ReadAllText($"{inFolder}\\Waistpieces.json");
                 string legIn = File.ReadAllText($"{inFolder}\\Leggings.json");
-                string skillsIn = File.ReadAllText($"{inFolder}\\ArmorSkills.json");
                 string weapCraftIn = File.ReadAllText($"{inFolder}\\WeaponCraft.json");
                 string armorCraftIn = File.ReadAllText($"{inFolder}\\ArmorCraft.json");
                 string weaponUpgradeIn = File.ReadAllText($"{inFolder}\\WeaponUpgrades.json");
@@ -242,7 +223,6 @@ namespace MHEdit.DAO
                 SaveArmorParts(outFile, armsIn, Helper.ArmOffset);
                 SaveArmorParts(outFile, waistIn, Helper.WaistOffset);
                 SaveArmorParts(outFile, legIn, Helper.LegOffset);
-                SaveSkills(outFile, skillsIn);
                 SaveCrafting(outFile, weapCraftIn, Helper.WeaponCraftOffset);
                 SaveCrafting(outFile, armorCraftIn, Helper.ArmorCraftOffset);
                 SaveUpgrades(outFile, weaponUpgradeIn);
@@ -260,8 +240,8 @@ namespace MHEdit.DAO
                 using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
                 {
                     bw.BaseStream.Seek(offset, SeekOrigin.Begin);
-                    Dictionary<string, MH1Armor> parts = JsonSerializer.Deserialize<Dictionary<string, MH1Armor>>(jsonIn);
-                    foreach (KeyValuePair<string, MH1Armor> item in parts)
+                    Dictionary<string, MHGArmor> parts = JsonSerializer.Deserialize<Dictionary<string, MHGArmor>>(jsonIn);
+                    foreach (KeyValuePair<string, MHGArmor> item in parts)
                     {
                         bw.Write((byte)item.Value.ModelMale);
                         bw.Write((byte)item.Value.ModelFemale);
@@ -273,9 +253,20 @@ namespace MHEdit.DAO
                         bw.Write((sbyte)item.Value.ResWater);
                         bw.Write((sbyte)item.Value.ResThunder);
                         bw.Write((sbyte)item.Value.ResDragon);
-                        bw.Write((byte)item.Value.Unk1);
-                        bw.Write((UInt16)item.Value.Unk2);
+                        bw.Write((UInt16)item.Value.Unk1);
+                        bw.Write((byte)item.Value.Unk2);
                         bw.Write((UInt32)item.Value.NameOffset);
+                        bw.Write((byte)item.Value.SkillID1);
+                        bw.Write((sbyte)item.Value.SkillValue1);
+                        bw.Write((byte)item.Value.SkillID2);
+                        bw.Write((sbyte)item.Value.SkillValue2);
+                        bw.Write((byte)item.Value.SkillID3);
+                        bw.Write((sbyte)item.Value.SkillValue3);
+                        bw.Write((byte)item.Value.SkillID4);
+                        bw.Write((sbyte)item.Value.SkillValue4);
+                        bw.Write((byte)item.Value.SkillID5);
+                        bw.Write((sbyte)item.Value.SkillValue5);
+                        bw.Write((UInt16)item.Value.Unk3);
                     }
                 }
             }
@@ -333,33 +324,6 @@ namespace MHEdit.DAO
                         bw.Write((byte)item.Value.Sleep);
                         bw.Write((UInt16)item.Value.SortOrder);
                         bw.Write((UInt32)item.Value.NameOffset);
-                    }
-                }
-            }
-        }
-
-        public void SaveSkills(string fileIn, string jsonIn)
-        {
-            if (jsonIn != null)
-            {
-                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
-                {
-                    bw.BaseStream.Seek(Helper.SkillsOffset, SeekOrigin.Begin);
-                    Dictionary<string, MH1Skills> armorSkills = JsonSerializer.Deserialize<Dictionary<string, MH1Skills>>(jsonIn);
-                    foreach (var item in armorSkills)
-                    {
-                        bw.Write((byte)item.Value.Unk1);
-                        bw.Write((sbyte)item.Value.LegArmor);
-                        bw.Write((sbyte)item.Value.HeadArmor);
-                        bw.Write((sbyte)item.Value.ChestArmor);
-                        bw.Write((sbyte)item.Value.ArmArmor);
-                        bw.Write((sbyte)item.Value.WaistArmor);
-                        bw.Write((byte)item.Value.Skill1);
-                        bw.Write((byte)item.Value.Skill2);
-                        bw.Write((byte)item.Value.Skill3);
-                        bw.Write((byte)item.Value.Skill4);
-                        bw.Write((byte)item.Value.Skill5);
-                        bw.Write((byte)item.Value.Unk2);
                     }
                 }
             }

@@ -28,15 +28,16 @@ MHEdit.exe P2G -i p2 EBOOT.BIN
 
 # Supported Games - Roadmap
 
-| Game | Code | Blademaster Weapons | Gunner Weapons | Armors |
-| --- | --- | --- | --- | --- |
-| P2G/FU | P2G, NAFU, EUFU | Yes | Yes | Yes |
-| MH1 | 1NA, 1JA | Yes | Yes | Yes |
-| MHG | MHGJ, MHGK, GWII | TBD | TBD | TBD |
-| P1/F1 | P1, NAF1, EUF1 | TBD | TBD | TBD |
-| P2/F2 | P2, NAF2, EUF2 | TBD | TBD | TBD |
-| MH2 | DOS | TBD | TBD | TBD |
-| MH3 | NATRI, EUTRI, JPTRI | TBD | TBD | TBD |
+| Game | Code | Blademaster Weapons | Gunner Weapons | Armors | Crafting | Upgrades |
+| --- | --- | --- | --- | --- | --- | --- |
+| P2G/FU | P2G, NAFU, EUFU | Yes | Yes | Yes | No | No |
+| MH1 | 1NA, 1JA | Yes | Yes | Yes | Yes | Yes |
+| MHG | GJA, GKO | Yes | Yes | Yes | Yes | Yes |
+| MHG | GWII | TBD | TBD | TBD | TBD | TBD |
+| P1/F1 | P1, NAF1, EUF1 | TBD | TBD | TBD | TBD | TBD |
+| P2/F2 | P2, NAF2, EUF2 | TBD | TBD | TBD | TBD | TBD |
+| MH2 | DOS | TBD | TBD | TBD | TBD | TBD |
+| MH3 | NATRI, EUTRI, JPTRI | TBD | TBD | TBD | TBD | TBD |
 
 ## Notes
 Support for the European version of MH1 is not currently planned as the game keeps copies of all the necessary data on a per-language basis.

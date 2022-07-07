@@ -66,3 +66,137 @@ Rathian Greaves+
 Rathian Leggings+
 Rathalos Greaves+
 Rathalos Leggings+
+Chrome Metal Boots
+Green Pants+
+Blue Pants+
+Hunter's Greaves+
+Hunter's Leggings+
+Bone Greaves+
+Bone Leggings+
+Velociprey Greaves+
+Velociprey Leggings+
+Battle Greaves+
+Battle Leggings+
+Silver Boots+
+Dark Metal Boots+
+Genprey Greaves+
+Genprey Leggings+
+Pink Metal Boots+
+Chrome Metal Boots+
+Ioprey Greaves+
+Ioprey Leggings+
+Gypceros Greaves+
+Gypceros Leggings+
+Cephalos Greaves+
+Cephalos Leggings+
+Green Pants S
+Blue Pants S
+Hunter's Greaves S
+Hunter's Leggings S
+Bone Greaves S
+Bone Leggings S
+Velociprey Greaves S
+Velociprey LeggingsS
+Battle Greaves S
+Battle Leggings S
+Silver Boots S
+Vespoid Greaves S
+Vespoid Leggings S
+Hornet Greaves S
+Hornet Leggings S
+Hi-Metal Greaves S
+Hi-Metal Leggings S
+Dark Metal Boots S
+Genprey Greaves S
+Genprey Leggings S
+Pink Metal Boots S
+Chrome Metal Boots S
+Ioprey Greaves S
+Ioprey Leggings S
+Gypceros Greaves S
+Gypceros Leggings S
+Cephalos Greaves S
+Cephalos Leggings S
+Rathian Greaves S
+Rathian Leggings S
+Khezu Greaves S
+Khezu Leggings S
+Rathalos Greaves S
+Rathalos Leggings S
+Plesioth Greaves S
+Plesioth Leggings S
+Gravios Greaves S
+Gravios Leggings S
+Cream Pants
+Hunter's Greaves U
+Hunter's Leggings U
+Bone Greaves U
+Bone Leggings U
+Velociprey Greaves U
+Velociprey LeggingsU
+Hi-Metal Greaves U
+Hi-Metal Leggings U
+Gypceros Greaves U
+Gypceros Leggings U
+Cephalos Greaves U
+Cephalos Leggings U
+Khezu Greaves U
+Khezu Leggings U
+Plesioth Greaves U
+Plesioth Leggings U
+Gravios Greaves U
+Gravios Leggings U
+Black Belt Greaves
+Rathian HeartGreaves
+RathianHeartLeggings
+Rathalos SoulGreaves
+RathalosSoulLeggings
+Shinobi Boots(White)
+Shinobi Boots(Black)
+Guild Knight Boots+
+Guild Knight Tights+
+Maiden's Stockings+
+Personal Tights+
+RathianHeartGreaves+
+RathianHeartLegging+
+RathalosSoulGreaves+
+RathalosSoulLegging+
+Auroros Pants Mai
+Genesis Pants Mai
+Borealis Pants Mai
+Glyph Pants Mai
+Red Borealis Mai
+Red Glyph Mai
+Dragonfeet+
+Dragonlegs+
+ShinobiBoots(Heaven)
+Shinobi Boots(Earth)
+Guild Knight Boots S
+Guild Knight TightsS
+Maiden's Stockings S
+Personal Tights S
+RathianHeartGreavesS
+RathianHeartLeggingS
+RathalosSoulGreavesS
+RathalosSoulLeggingS
+Auroros Pants Haku
+Genesis Pants Haku
+Borealis Pants Haku
+Glyph Pants Haku
+Red Borealis Haku
+Red Glyph Haku
+Dragonfeet S
+Dragonlegs S
+Auroros Pants Ten
+Genesis Pants Ten
+Borealis Pants Ten
+Glyph Pants Ten
+Golden Moon Greaves
+Golden Moon Leggings
+Silver Sol Greaves
+Silver Sol Leggings
+Fatalis Feet
+Fatalis Legs
+Battle Greaves U
+Battle Leggings U
+Lucky Metal Boots
