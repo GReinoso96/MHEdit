@@ -48,6 +48,7 @@ namespace MHEdit.DAO
             var skills = GetSkills(inFile);
             var weaponCrafts = GetCrafting(inFile, Helper.WeaponCraftOffset, Helper.WeaponCraftCount);
             var armorCrafts = GetCrafting(inFile, Helper.ArmorCraftOffset, Helper.ArmorCraftCount);
+            var upgrades = GetUpgrades(inFile);
 
             try
             {
@@ -62,6 +63,7 @@ namespace MHEdit.DAO
                 File.WriteAllText($"{outFolder}\\ArmorSkills.json", skills);
                 File.WriteAllText($"{outFolder}\\WeaponCraft.json", weaponCrafts);
                 File.WriteAllText($"{outFolder}\\ArmorCraft.json", armorCrafts);
+                File.WriteAllText($"{outFolder}\\WeaponUpgrades.json", upgrades);
             }
             catch (Exception ex)
             {
@@ -189,6 +191,35 @@ namespace MHEdit.DAO
             }
         }
 
+        public string GetUpgrades(string fileIn)
+        {
+            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            {
+                br.BaseStream.Seek(Helper.WeaponUpgradeOffset, SeekOrigin.Begin);
+                Dictionary<int, MH1Upgrade> upgrades = new();
+                for (int i = 0; i < Helper.MeleeCount; i++)
+                {
+                    MH1Upgrade upgrade = new(
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16(),
+                        br.ReadUInt16());
+                    upgrades.Add(i, upgrade);
+                }
+
+                string jsonString = JsonSerializer.Serialize(upgrades, JsonOptions);
+                return jsonString;
+            }
+        }
+
         public void LoadData(string inFolder, string outFile)
         {
             try
@@ -203,6 +234,7 @@ namespace MHEdit.DAO
                 string skillsIn = File.ReadAllText($"{inFolder}\\ArmorSkills.json");
                 string weapCraftIn = File.ReadAllText($"{inFolder}\\WeaponCraft.json");
                 string armorCraftIn = File.ReadAllText($"{inFolder}\\ArmorCraft.json");
+                string weaponUpgradeIn = File.ReadAllText($"{inFolder}\\WeaponUpgrades.json");
                 SaveMelee(outFile, meleeIn);
                 SaveGunner(outFile, gunnerIn);
                 SaveArmorParts(outFile, headIn, Helper.HeadOffset);
@@ -213,6 +245,7 @@ namespace MHEdit.DAO
                 SaveSkills(outFile, skillsIn);
                 SaveCrafting(outFile, weapCraftIn, Helper.WeaponCraftOffset);
                 SaveCrafting(outFile, armorCraftIn, Helper.ArmorCraftOffset);
+                SaveSkills(outFile, weaponUpgradeIn);
             }
             catch (Exception ex)
             {
@@ -389,6 +422,33 @@ namespace MHEdit.DAO
                         bw.Write((byte)item.Value.Item2Required);
                         bw.Write((byte)item.Value.Item3Required);
                         bw.Write((byte)item.Value.Item4Required);
+                    }
+                }
+            }
+        }
+
+        public void SaveUpgrades(string fileIn, string jsonIn)
+        {
+            if (jsonIn != null)
+            {
+                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+                {
+                    bw.BaseStream.Seek(Helper.WeaponUpgradeOffset, SeekOrigin.Begin);
+                    Dictionary<string, MH1Upgrade> upgrades = JsonSerializer.Deserialize<Dictionary<string, MH1Upgrade>>(jsonIn);
+                    foreach (var item in upgrades)
+                    {
+                        bw.Write((UInt16)item.Value.ItemID1);
+                        bw.Write((UInt16)item.Value.ItemAmt1);
+                        bw.Write((UInt16)item.Value.ItemID2);
+                        bw.Write((UInt16)item.Value.ItemAmt2);
+                        bw.Write((UInt16)item.Value.ItemID3);
+                        bw.Write((UInt16)item.Value.ItemAmt3);
+                        bw.Write((UInt16)item.Value.WeaponID1);
+                        bw.Write((UInt16)item.Value.WeaponID2);
+                        bw.Write((UInt16)item.Value.WeaponID3);
+                        bw.Write((UInt16)item.Value.WeaponID4);
+                        bw.Write((UInt16)item.Value.WeaponID5);
+                        bw.Write((UInt16)item.Value.WeaponID6);
                     }
                 }
             }

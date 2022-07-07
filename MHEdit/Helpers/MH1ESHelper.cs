@@ -4,24 +4,24 @@ using System.IO;
 
 namespace MHEdit.Helpers
 {
-    internal class MH1NAHelper : BaseHelper
+    internal class MH1ESHelper : BaseHelper
     {
-        public MH1NAHelper()
+        public MH1ESHelper()
         {
-            MeleeOffset = 0x48E80;
-            gunnerOffset = 0x4A6E0;
+            MeleeOffset = 0x2CD0;
+            gunnerOffset = 0x4730;
 
-            WeaponCraftOffset = 0x469D0;
-            ArmorCraftOffset = 0x44790;
-            WeaponUpgradeOffset = 0x472C0;
+            //Sub Main WeaponCraftOffset = 0x48CE0;
+            //Sub Main ArmorCraftOffset = 0x46AA0;
+            //ELF WeaponUpgradeOffset = 0x232F00;
 
-            HeadOffset = 0x4AB20;
-            ChestOffset = 0x4B100;
-            ArmOffset = 0x4B740;
-            WaistOffset = 0x4BD70;
-            LegOffset = 0x4C2F0;
+            HeadOffset = 0x4E50;
+            ChestOffset = 0x5990;
+            ArmOffset = 0x6810;
+            WaistOffset = 0x73C0;
+            LegOffset = 0x8090;
 
-            SkillsOffset = 0x4C840;
+            //Sub Main SkillsOffset = 0x49A70;
 
             MeleeCount = 260;
             GunnerCount = 26;
@@ -35,7 +35,7 @@ namespace MHEdit.Helpers
             WaistCount = 70;
             LegCount = 68;
 
-            SkillsCount = 137;
+            //SkillsCount = 137;
 
             try
             {

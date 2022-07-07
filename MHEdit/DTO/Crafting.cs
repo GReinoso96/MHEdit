@@ -6,41 +6,35 @@ using System.Threading.Tasks;
 
 namespace MHEdit.DTO
 {
-    internal class Crafting
+    internal class MH1Upgrade
     {
-        public Crafting(byte type, byte unknown, ushort weaponID, ushort itemID1, ushort itemAmt1, ushort itemID2, ushort itemAmt2, ushort itemID3, ushort itemAmt3, ushort itemID4, ushort itemAmt4, byte item1Required, byte item2Required, byte item3Required, byte item4Required)
+        public MH1Upgrade(ushort itemID1, ushort itemAmt1, ushort itemID2, ushort itemAmt2, ushort itemID3, ushort itemAmt3, ushort weaponID1, ushort weaponID2, ushort weaponID3, ushort weaponID4, ushort weaponID5, ushort weaponID6)
         {
-            Type = type;
-            Unknown = unknown;
-            PieceID = weaponID;
             ItemID1 = itemID1;
             ItemAmt1 = itemAmt1;
             ItemID2 = itemID2;
             ItemAmt2 = itemAmt2;
             ItemID3 = itemID3;
             ItemAmt3 = itemAmt3;
-            ItemID4 = itemID4;
-            ItemAmt4 = itemAmt4;
-            Item1Required = item1Required;
-            Item2Required = item2Required;
-            Item3Required = item3Required;
-            Item4Required = item4Required;
+            WeaponID1 = weaponID1;
+            WeaponID2 = weaponID2;
+            WeaponID3 = weaponID3;
+            WeaponID4 = weaponID4;
+            WeaponID5 = weaponID5;
+            WeaponID6 = weaponID6;
         }
 
-        public byte Type { get; set; }
-        public byte Unknown { get; set; }
-        public UInt16 PieceID { get; set; }
         public UInt16 ItemID1 { get; set; }
         public UInt16 ItemAmt1 { get; set; }
         public UInt16 ItemID2 { get; set; }
         public UInt16 ItemAmt2 { get; set; }
         public UInt16 ItemID3 { get; set; }
         public UInt16 ItemAmt3 { get; set; }
-        public UInt16 ItemID4 { get; set; }
-        public UInt16 ItemAmt4 { get; set; }
-        public byte Item1Required { get; set; }
-        public byte Item2Required { get; set; }
-        public byte Item3Required { get; set; }
-        public byte Item4Required { get; set; }
+        public UInt16 WeaponID1 { get; set; }
+        public UInt16 WeaponID2 { get; set; }
+        public UInt16 WeaponID3 { get; set; }
+        public UInt16 WeaponID4 { get; set; }
+        public UInt16 WeaponID5 { get; set; }
+        public UInt16 WeaponID6 { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace MHEdit.Helpers
 
             WeaponCraftOffset = 0x2331B0;
             ArmorCraftOffset = 0x231000;
+            WeaponUpgradeOffset = 0x233A50;
 
             HeadOffset = 0x236D70;
             ChestOffset = 0x237350;

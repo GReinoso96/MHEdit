@@ -27,6 +27,7 @@ namespace MHEdit.Helpers
         public uint WaistCraftOffset { get; set; }
         public uint LegCraftOffset { get; set; }
         public uint ArmorCraftOffset { get; set; }
+        public uint WeaponUpgradeOffset { get; set; }
 
         public uint HeadOffset { get; set; }
         public uint ChestOffset { get; set; }
@@ -45,6 +46,7 @@ namespace MHEdit.Helpers
         public uint WaistCraftCount { get; set; }
         public uint LegCraftCount { get; set; }
         public uint ArmorCraftCount { get; set; }
+        public uint WeaponUpgradeCount { get; set; }
 
         public uint HeadCount { get; set; }
         public uint ChestCount { get; set; }
