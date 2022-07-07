@@ -16,7 +16,7 @@ if (args.Length >= 4)
             DAO.LoadData(args[2], args[3]);
         }
     }
-    if (args[0].Equals("GJA") || args[0].Equals("GKO"))
+    if (args[0].Equals("GJA") || args[0].Equals("GKO") || args[0].Equals("GWII"))
     {
         MHGDAO DAO = new();
         DAO.SetGame(args[0]);

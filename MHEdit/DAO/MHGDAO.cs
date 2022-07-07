@@ -14,6 +14,7 @@ namespace MHEdit.DAO
     internal class MHGDAO : Interfaces.IController
     {
         private BaseHelper Helper = new MHGJAHelper();
+        private bool BigEndian = false;
 
         private static JsonSerializerOptions JsonOptions = new JsonSerializerOptions
         {
@@ -26,7 +27,8 @@ namespace MHEdit.DAO
             switch (code)
             {
                 case "GWII":
-                    //Helper = new MH1NAHelper();
+                    Helper = new MHGWIIHelper();
+                    BigEndian = true;
                     break;
                 case "GJA":
                     Helper = new MHGJAHelper();
@@ -73,7 +75,7 @@ namespace MHEdit.DAO
 
         public string GetArmorParts(string inFile, uint offset, uint count, string[] names)
         {
-            using (BinaryReader br = new(File.OpenRead(inFile)))
+            using (BinaryReaderBE br = new(File.OpenRead(inFile), BigEndian))
             {
                 br.BaseStream.Seek(offset, SeekOrigin.Begin);
                 Dictionary<string, MHGArmor> parts = new();
@@ -114,7 +116,7 @@ namespace MHEdit.DAO
 
         public string GetGunner(string fileIn)
         {
-            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            using (BinaryReaderBE br = new(File.OpenRead(fileIn), BigEndian))
             {
                 br.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                 Dictionary<string, MHJGunner> gunnerWeapons = new();
@@ -143,7 +145,7 @@ namespace MHEdit.DAO
 
         public string GetMelee(string fileIn)
         {
-            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            using (BinaryReaderBE br = new(File.OpenRead(fileIn), BigEndian))
             {
                 br.BaseStream.Seek(Helper.MeleeOffset, SeekOrigin.Begin);
                 Dictionary<string, MH1Melee> meleeWeapons = new();
@@ -175,7 +177,7 @@ namespace MHEdit.DAO
 
         public string GetUpgrades(string fileIn)
         {
-            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            using (BinaryReaderBE br = new(File.OpenRead(fileIn), BigEndian))
             {
                 br.BaseStream.Seek(Helper.WeaponUpgradeOffset, SeekOrigin.Begin);
                 Dictionary<int, MH1Upgrade> upgrades = new();
@@ -237,7 +239,7 @@ namespace MHEdit.DAO
         {
             if (jsonIn != null)
             {
-                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+                using (BinaryWriterBE bw = new(File.OpenWrite(fileIn), BigEndian))
                 {
                     bw.BaseStream.Seek(offset, SeekOrigin.Begin);
                     Dictionary<string, MHGArmor> parts = JsonSerializer.Deserialize<Dictionary<string, MHGArmor>>(jsonIn);
@@ -276,7 +278,7 @@ namespace MHEdit.DAO
         {
             if (jsonIn != null)
             {
-                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+                using (BinaryWriterBE bw = new(File.OpenWrite(fileIn), BigEndian))
                 {
                     bw.BaseStream.Seek(Helper.gunnerOffset, SeekOrigin.Begin);
                     Dictionary<string, MHJGunner> gunnerWeapons = JsonSerializer.Deserialize<Dictionary<string, MHJGunner>>(jsonIn);
@@ -303,7 +305,7 @@ namespace MHEdit.DAO
         {
             if (jsonIn != null)
             {
-                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+                using (BinaryWriterBE bw = new(File.OpenWrite(fileIn), BigEndian))
                 {
                     bw.BaseStream.Seek(Helper.MeleeOffset, SeekOrigin.Begin);
                     Dictionary<string, MH1Melee> meleeWeapons = JsonSerializer.Deserialize<Dictionary<string, MH1Melee>>(jsonIn);
@@ -331,7 +333,7 @@ namespace MHEdit.DAO
 
         public string GetCrafting(string fileIn, uint offset, uint count)
         {
-            using (BinaryReader br = new(File.OpenRead(fileIn)))
+            using (BinaryReaderBE br = new(File.OpenRead(fileIn), BigEndian))
             {
                 br.BaseStream.Seek(offset, SeekOrigin.Begin);
                 Dictionary<int, Crafting> crafts = new();
@@ -365,7 +367,7 @@ namespace MHEdit.DAO
         {
             if (jsonIn != null)
             {
-                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+                using (BinaryWriterBE bw = new(File.OpenWrite(fileIn), BigEndian))
                 {
                     bw.BaseStream.Seek(offset, SeekOrigin.Begin);
                     Dictionary<string, Crafting> crafts = JsonSerializer.Deserialize<Dictionary<string, Crafting>>(jsonIn);
@@ -395,7 +397,7 @@ namespace MHEdit.DAO
         {
             if (jsonIn != null)
             {
-                using (BinaryWriter bw = new(File.OpenWrite(fileIn)))
+                using (BinaryWriterBE bw = new(File.OpenWrite(fileIn), BigEndian))
                 {
                     bw.BaseStream.Seek(Helper.WeaponUpgradeOffset, SeekOrigin.Begin);
                     Dictionary<string, MH1Upgrade> upgrades = JsonSerializer.Deserialize<Dictionary<string, MH1Upgrade>>(jsonIn);
